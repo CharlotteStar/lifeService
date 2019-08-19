@@ -1,2 +1,9 @@
 <!--pages/index/index.wxml-->
-<text>pages/index/index.wxml11111s55555555555555ssssss111111111</text>
+<!-- 引用组件的页面模板 -->
+<view>
+  <component-tag-name prop-a="{{dataFieldA}}" prop-b="{{dataFieldB}}">
+    <!-- 这部分内容将被放置在组件 <slot> 的位置上 -->
+    <view>这里是插入到组件slot中的内容</view>
+  </component-tag-name>
+</view>
+
