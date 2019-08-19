@@ -7,7 +7,7 @@
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-    "checkSiteMap":false
+		"checkSiteMap": false
 	},
 	"appid": "wx87003258d57a004b",
 	"projectname": "lifeService",
