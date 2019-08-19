@@ -57,7 +57,7 @@
        "enablePullDownRefresh":false
 
     # 初始化默认云数据库
-           const db=wx.cloud.database({
+           const db=wx.cloud.database({ 
              //第二个环境 env:"环境id"
            });
             addData: function(){

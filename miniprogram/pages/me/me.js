@@ -1,6 +1,6 @@
 // pages/me/me.js
-Page({
 
+Page({
   /**
    * 页面的初始数据
    */
