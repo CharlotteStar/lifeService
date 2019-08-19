@@ -53,7 +53,7 @@
       从个人中心传了一个参数过去love ,在love打印一下options就收到了
 
 
-      # 禁止用户下拉操作：全局app.json  也可以单个组件
+      # 禁止用户下拉操作：全局app.json    也可以单个组件
        "enablePullDownRefresh":false
 
     # 初始化默认云数据库
