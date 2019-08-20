@@ -1,5 +1,8 @@
 <!--pages/index/index.wxml-->
 
+
+
+
 <view class="index_content">
   <swiper class='u-wrp-bnr' indicator-dots='true' autoplay='true' interval='5000' duration='1000' circular='true' indicator-color='#2E266E' indicator-active-color='white'>
     <block wx:for="{{bnrUrl}}" wx:key="key" wx:for-index="index">

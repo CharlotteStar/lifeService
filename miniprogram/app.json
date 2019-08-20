@@ -1,12 +1,14 @@
 {
   "pages": [
-    "pages/addBusCard/addBusCard",
+    "pages/home/home",
+    "pages/me/me",
     "pages/index/index",
+    "pages/addBusCard/addBusCard",
     "pages/onlineRepairs/onlineRepairs",
     "pages/busCardList/busCardList",
     "pages/msgBoard/msgBoard",
-    "pages/serviceDesc/serviceDesc",
-    "pages/me/me"
+    "pages/serviceDesc/serviceDesc"
+    
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -15,39 +17,6 @@
     "navigationBarTitleText": "生活服务",
     "navigationBarTextStyle": "black"
   },
-  "sitemapLocation": "sitemap.json",
-  "tabBar": {
-    "list": [
-      {
-        "selectedIconPath": "images/icon/icon_shouye_press.png",  
-        "iconPath": "images/icon/icon_shouye.png",  
-        "pagePath": "pages/index/index",
-        "text": "首页"
-      },
-      {
-        "selectedIconPath": "images/icon/icon_serviceDesc_press.png",
-        "iconPath": "images/icon/icon_serviceDesc.png",
-        "pagePath": "pages/serviceDesc/serviceDesc",
-        "text": "服务说明"
-      },
-      {
-        "iconPath": "images/icon/icon_onlineRepairs.png",
-        "pagePath": "pages/onlineRepairs/onlineRepairs",
-        "isSpecial": true,
-        "text": "在线报修"
-      },
-      {
-        "selectedIconPath": "images/icon/AFEI4-c2EAQYACDCi6vqBSjczoSVATAgOCBAZQ.png",
-        "iconPath": "images/icon/AFEI4-c2EAQYACDCi6vqBSiM75mRBDAgOCBAZQ.png",
-        "pagePath": "pages/busCardList/busCardList",
-        "text": "名片列表"
-      },
-      {
-        "selectedIconPath": "images/icon/icon_me_press.png",
-        "iconPath": "images/icon/icon_me.png",
-        "pagePath": "pages/me/me",
-        "text": "我的"
-      }
-    ]
-  }
+  "sitemapLocation": "sitemap.json"
+  
 }

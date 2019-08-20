@@ -1,3 +1,5 @@
 <!--pages/busCardList/busCardList.wxml-->
 <text>busCardList.wxml</text>
 
+<!--底部导航-->
+<tab-bar></tab-bar>
