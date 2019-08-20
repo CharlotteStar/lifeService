@@ -1,0 +1,55 @@
+<!--pages/addBusCard/addBusCard.wxml-->
+
+<view>
+  <van-cell-group class="option">
+    <text>姓名</text>
+    <van-field value="{{ name }}" bind:change="onNameChange" />
+  </van-cell-group>
+
+  <van-cell-group class="option">
+    <text>电话</text>
+    <van-field value="{{ phone }}" bind:change="onPhoneChange" />
+  </van-cell-group>
+
+  <van-cell-group class="option">
+    <text>岗位</text>
+    <van-field value="{{ post }}" bind:change="onPostChange" />
+  </van-cell-group>
+
+  <van-cell-group class="option">
+    <text>邮箱</text>
+    <van-field value="{{ email }}" bind:change="onEmailChange" />
+  </van-cell-group>
+
+  <van-cell-group class="option">
+    <text>微信号</text>
+    <van-field value="{{ wxid }}" bind:change="onWxidChange" />
+  </van-cell-group>
+
+  <van-cell-group class="option">
+    <text>地址</text>
+    <view class="address">
+      <van-field class="city" value="{{ city }}" placeholder="城市" bind:change="onCityChange" />
+      <van-field value="{{ specific }}" placeholder="具体地址" bind:change="onSpecificChange" />
+    </view>
+  </van-cell-group>
+
+  <van-cell-group class="option">
+    <text>头像</text>
+    <view class="uploadAvatar" bindtap="chooseAvatar">添加图片</view>
+    <image src="{{showAvatar}}" mode="widthFix" class="showAvatar"></image>
+  </van-cell-group>
+
+
+
+  <van-cell-group class="option">
+    <text>关于我</text>
+    <van-field value="{{ aboutMe }}" type="textarea" autosize bind:change="onAboutMeChange" />
+  </van-cell-group>
+
+  <view class="commit-box">
+    <van-button class="commit-btn" size="large" type="primary" bind:click="commitData">提交</van-button>
+  </view>
+
+
+</view>
