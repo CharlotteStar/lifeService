@@ -1,79 +1,188 @@
 <!--pages/index/index.wxml-->
 <view class="index_content">
-<swiper class='u-wrp-bnr' indicator-dots='true' autoplay='true' interval='5000' duration='1000' circular='true' indicator-color='#2E266E' indicator-active-color='white'>
-  <block wx:for="{{bnrUrl}}" wx:key="key" wx:for-index="index">
-    <swiper-item>
-      <image src='{{item.url}}' class='u-img-slide' mode='aspectFill'></image>
-    </swiper-item>
-  </block>
-</swiper>
+  <swiper class='u-wrp-bnr' indicator-dots='true' autoplay='true' interval='5000' duration='1000' circular='true' indicator-color='#2E266E' indicator-active-color='white'>
+    <block wx:for="{{bnrUrl}}" wx:key="key" wx:for-index="index">
+      <swiper-item>
+        <image src='{{item.url}}' class='u-img-slide' mode='aspectFill'></image>
+      </swiper-item>
+    </block>
+  </swiper>
   <!-- 重设小圆点样式 -->
-<view class="dots">
-<block wx:for="{{imgs}}" wx:key="imgs">
-<view class="dot{{index == currentSwiper ? ' active' : ''}}"></view>
-</block>
-</view>
+  <view class="dots">
+    <block wx:for="{{imgs}}" wx:key="imgs">
+      <view class="dot{{index == currentSwiper ? ' active' : ''}}"></view>
+    </block>
+  </view>
 
-   <!-- 结束小圆点样式 -->
+  <!-- 结束小圆点样式 -->
 </view>
-<view class="index_title"><text>更全面 更高效</text></view>
+<view class="index_title">
+  <text>更全面 更高效</text>
+</view>
 <view class="hengxian"></view>
 <view class="server">
   <view class="content_serve">
-   <navigator url="/pages/msgBoard/msgBoard"
-   hover-class="navigator-hover"> 
-    <view class="cint_twe"><text>水路管件</text></view>
-    <image src="../../images/index/index1.jpg"></image>
-      </navigator>
+    <navigator url="/pages/msgBoard/msgBoard" hover-class="navigator-hover">
+      <view class="cint_twe">
+        <text>水路管件</text>
+      </view>
+      <image src="../../images/index/index1.jpg"></image>
+    </navigator>
   </view>
-   <view class="content_serve">
-    <navigator url="/pages/msgBoard/msgBoard"
-    hover-class="navigator-hover"> 
-     <view class="cint_twe"> <text>电路灯具</text></view>
-    <image src="../../images/index/index2.jpg"></image>
-      </navigator>
+  <view class="content_serve">
+    <navigator url="/pages/msgBoard/msgBoard" hover-class="navigator-hover">
+      <view class="cint_twe">
+        <text>电路灯具</text>
+      </view>
+      <image src="../../images/index/index2.jpg"></image>
+    </navigator>
   </view>
-   <view class="content_serve">
-    <navigator url="/pages/msgBoard/msgBoard"
-    hover-class="navigator-hover"> 
-     <view class="cint_twe"> <text>家用电器</text></view>
-    <image src="../../images/index/index3.jpg"></image>
-      </navigator>
+  <view class="content_serve">
+    <navigator url="/pages/msgBoard/msgBoard" hover-class="navigator-hover">
+      <view class="cint_twe">
+        <text>家用电器</text>
+      </view>
+      <image src="../../images/index/index3.jpg"></image>
+    </navigator>
   </view>
-   <view class="content_serve">
-    <navigator url="/pages/msgBoard/msgBoard"
-    hover-class="navigator-hover"> 
-    <view class="cint_twe">  <text>厨具卫浴</text></view>
-    <image src="../../images/index/index4.jpg"></image>
-      </navigator>
+  <view class="content_serve">
+    <navigator url="/pages/msgBoard/msgBoard" hover-class="navigator-hover">
+      <view class="cint_twe">
+        <text>厨具卫浴</text>
+      </view>
+      <image src="../../images/index/index4.jpg"></image>
+    </navigator>
   </view>
-   <view class="content_serve">
-    <navigator url="/pages/msgBoard/msgBoard"
-    hover-class="navigator-hover"> 
-     <view class="cint_twe"> <text>办公设备</text></view>
-    <image src="../../images/index/index5.jpg"></image>
-      </navigator>
+  <view class="content_serve">
+    <navigator url="/pages/msgBoard/msgBoard" hover-class="navigator-hover">
+      <view class="cint_twe">
+        <text>办公设备</text>
+      </view>
+      <image src="../../images/index/index5.jpg"></image>
+    </navigator>
   </view>
-   <view class="content_serve">
-   <navigator url="/pages/msgBoard/msgBoard" hover-class="navigator-hover">
-    <view class="cint_twe">  <text>电子产品</text></view>
-    <image src="../../images/index/index6.jpg"></image>
+  <view class="content_serve">
+    <navigator url="/pages/msgBoard/msgBoard" hover-class="navigator-hover">
+      <view class="cint_twe">
+        <text>电子产品</text>
+      </view>
+      <image src="../../images/index/index6.jpg"></image>
     </navigator>
   </view>
 </view>
- <!-- 结束更全面 -->
-  <!-- 开始专业服务 -->
+<!-- 结束更全面 -->
+<!-- 开始专业服务 -->
 <view class="index_bg">
- <image src="../../images/index/index_bg.jpg" class="index_img"></image>
- <view class="indw_title">
- <text>专业服务 信心保证</text>
- <view class="hengxian"></view>
+  <image src="../../images/index/index_bg.jpg" class="index_img"></image>
+  <view class="indw_title">
+    <text>专业服务 信心保证</text>
+    <view class="hengxian"></view>
+  </view>
+  <!-- 标题文字 -->
+  <view class="index_timfont">
+    <text>我们是智者设备公司旗下，为家庭或企业用户提供在线报修服务的网络平台，通过我们的报修平台，可以让用户更快更方便的报修，及时分配维修师傅上门服务。</text>
+  </view>
+  <!-- 文字内容 -->
+  <view class="index_titlefont">
+    <view class="indw_font">
+      <text class="font_one">10min</text>
+      <text class="font_two">快速响应</text>
+    </view>
+    <view class="indw_font">
+      <text class="font_one">30min</text>
+      <text class="font_two">上门超时赔付</text>
+    </view>
+    <view class="indw_font">
+      <view>
+        <text class="font_one">98%</text>
+      </view>
+      <view>
+        <text class="font_two">用户满意度</text>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 保修预约 -->
+<view class="appointment_kt">
+  <view class="tment_kt">
+    <view class="tehengxian"></view>
+    <view class="tehencolor">保修预约</view>
+    <view class="tehengxian"></view>
+  </view>
+  <!-- 输入框 -->
+  <view class="usermsg">
+    <view class="user_inctont">
+      <text class="textred">*</text>
+      <text class="text_contacts">联系人：</text>
+    </view>
+    <view>
+      <input placeholder="请输入联系人姓名" class="user_uame" placeholder-class="user_morenname"></input>
+    </view>
+    <view class="user_inctont">
+      <text class="textred">*</text>
+      <text class="text_contacts">联系电话：</text>
+    </view>
+    <view>
+      <input placeholder="请输入联系人电话" class="user_uame" placeholder-class="user_morenname"></input>
+    </view>
+    <view class="user_inctont">
+      <text class="textred">*</text>
+      <text class="text_contacts">单选按钮：</text>
+    </view>
+    <view>
+      <van-radio-group value="{{ radio }}" bindchange="onChange" class="serverradio">
+        <van-radio name="1" checked-color="#333333" custom-class="radioone">水路管件</van-radio>
+        <van-radio name="2" checked-color="#333333" custom-class="radioone">电路灯具</van-radio>
+        <van-radio name="3" checked-color="#333333" custom-class="radioone">家电</van-radio>
+        <van-radio name="4" checked-color="#333333" custom-class="radioone">厨卫</van-radio>
+        <van-radio name="5" checked-color="#333333" custom-class="radioone">办公设备</van-radio>
+        <van-radio name="6" checked-color="#333333" custom-class="radioone">电子产品</van-radio>
+      </van-radio-group>
+    </view>
+    <!-- 上传图片 -->
+    <view class="user_inctont">
+      <text class="textred">*</text>
+      <text class="text_contacts">上传图片：</text>
+    </view>
+    <view>
+      <van-cell-group custom-style="phonebg">
+        <van-field value="{{ sms }}" center clearable placeholder="请拍照上传"  use-button-slot readonly>
+          <van-button slot="button" size="small" type="primary" bindtap="tianjia">点击上传</van-button>
+        </van-field>
+      </van-cell-group>
+    </view>
+     <!-- 结束上传图片 -->
+     <view class="user_inctont">
+      <text class="textred">*</text>
+      <text class="text_contacts">故障说明：</text>
+    </view>
+     <view class="textarea-wrp">
+      <textarea auto-focus="true" style="height: 250rpx" placeholder="请输入留言"/>
+    </view>
+    <van-button type="primary" size="large">马上提交</van-button>
+    <view class="tment_kt">
+    <view class="tehengxian"></view>
+    <view class="tehencolor">服务案例</view>
+    <view class="tehengxian"></view>
+  </view>
+  </view>
+</view>
+<!-- 服务案例 -->
+<view class="Service_case">
+ <view class="service_item">
+   <view class="service_img"><image src="../../images/index/dibu1.jpg"></image></view>
+   <view class="service_text"><text>XX小区住户电路维修</text></view>
  </view>
-   <!-- 文字内容 -->
-   <view class="index_titlefont">
-   <view class="indw_font">
-      <text>10min</text>
-      <text>快速响应</text>
-   </view>
- </view> 
+  <view class="service_item">
+   <view class="service_img"><image src="../../images/index/dibu2.jpg"></image></view>
+   <view class="service_text"><text>XX小区窗户维修保养</text></view>
+ </view>
+  <view class="service_item">
+   <view class="service_img"><image src="../../images/index/dibu3.jpg"></image></view>
+   <view class="service_text"><text>XX区住户冰箱不制冷</text></view>
+ </view>
+  <view class="service_item">
+   <view class="service_img"><image src="../../images/index/dibu4.jpg"></image></view>
+   <view class="service_text"><text>电视闪屏到店维修</text></view>
+ </view>
 </view>
