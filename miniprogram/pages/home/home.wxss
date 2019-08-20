@@ -1,0 +1,49 @@
+/* pages/home/home.wxss */
+
+
+
+/*tabbar*/
+.tabbar-list{
+  display:flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  text-align: center;
+  font-size:20rpx;
+  position:fixed;
+  bottom:0;
+  width:100%;
+  border-top:1px solid #fff;
+  padding:10px 0 5px;
+  z-index:999;
+  background:#fff;
+}
+.tabbar-item{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  width:25%;
+}
+.tab-icon{
+  max-width:80px;
+  max-height:80px;
+  width:50rpx;
+  height:50rpx;
+}
+.tab-text{
+  margin-top:5rpx;
+}
+.tab-center{
+  width:100rpx;
+  height:100rpx;
+  background:rgb(17, 219, 17);
+  border-radius:50%;
+  position:absolute;
+  top:-35rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tab-center .tab-icon{
+  width:50rpx;height:50rpx;
+}

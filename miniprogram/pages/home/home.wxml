@@ -1,0 +1,60 @@
+<!--pages/home/home.wxml-->
+<text>pages/home/home.wxml</text>
+
+<view class="tab-bar-container">
+
+  <view class="tab-bar-container-item" style="display:{{ active=='shouye' ? 'block' : 'none'}}">
+    <index></index>
+  </view>
+
+  <view class="tab-bar-container-item" style="display:{{ active=='me' ? 'block' : 'none'}}">
+    <me></me>
+  </view>
+
+  <view class="tab-bar-container-item" style="display:{{ active=='busCardList' ? 'block' : 'none'}}">
+    <busCardList></busCardList>
+  </view>
+
+  <view class="tab-bar-container-item" style="display:{{ active=='onlineRepairs' ? 'block' : 'none'}}">
+    <onlineRepairs></onlineRepairs>
+  </view>
+
+  <view class="tab-bar-container-item" style="display:{{ active=='serviceDesc' ? 'block' : 'none'}}">
+    <serviceDesc></serviceDesc>
+  </view>
+
+</view>
+
+<view class="tabbar-list">
+  <view class="tabbar-item" bindtap="toggleTab" data-name="shouye">
+    <image 
+    src="{{active=='shouye' ? '/images/icon/icon_shouye_press.png' : '/images/icon/icon_shouye.png'}}" 
+    class="tab-icon" 
+    mode="aspectFit"
+  ></image>
+    <view class="tab-text" style="color:{{ active=='shouye' ? '#2c2' : 'none'}}">首页</view>
+  </view>
+
+  <view class="tabbar-item" bindtap="toggleTab"  data-name="serviceDesc">
+    <image src="{{active=='serviceDesc' ? '/images/icon/icon_serviceDesc_press.png' : '/images/icon/icon_serviceDesc.png'}}" class="tab-icon" mode="aspectFit"></image>
+    <view class="tab-text" style="color:{{ active=='serviceDesc' ? '#2c2' : 'none'}}">服务说明</view>
+  </view>
+
+   <view class="tabbar-item" bindtap="toggleTab" data-name="onlineRepairs">
+    <view class="tab-center">
+      <image src="/images/icon/icon_onlineRepairs.png" class="tab-icon" mode="aspectFill"></image>
+    </view>
+    <view class="tab-text" style="color:{{ active=='onlineRepairs' ? '#2c2' : 'none'}}">在线报修</view>
+  </view>
+
+  <view class="tabbar-item" bindtap="toggleTab" data-name="busCardList">
+    <image src="{{active=='busCardList' ? '/images/icon/AFEI4-c2EAQYACDCi6vqBSjczoSVATAgOCBAZQ.png' : '/images/icon/AFEI4-c2EAQYACDCi6vqBSiM75mRBDAgOCBAZQ.png'}}" class="tab-icon" mode="aspectFit"></image>
+    <view class="tab-text" style="color:{{ active=='busCardList' ? '#2c2' : 'none'}}">名片列表</view>
+  </view>
+
+  <view class="tabbar-item" bindtap="toggleTab" data-name="me">
+    <image src="{{active=='me' ? '/images/icon/icon_me_press.png' : '/images/icon/icon_me.png'}}" class="tab-icon" mode="aspectFit"></image>
+    <view class="tab-text" style="color:{{ active=='me' ? '#2c2' : 'none'}}">我的</view>
+  </view>
+
+</view>
