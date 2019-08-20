@@ -1,2 +1,4 @@
 <!--pages/me/me.wxml-->
 <text>pages/me/me.wxml</text>
+
+<view><button>点击显示图片</button></view>

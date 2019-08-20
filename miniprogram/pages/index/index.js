@@ -5,9 +5,19 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    "bnrUrl": [{
+      "url": "../../images/index/lunbotu1.jpg"
+    }, {
+        "url": "../../images/index/lunbotu2.jpg"
+    }],
+    currentSwiper: 0,
+    autoplay: true
   },
-
+  swiperChange: function (e) {
+    this.setData({
+      currentSwiper: e.detail.current
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
