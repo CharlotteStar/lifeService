@@ -7,13 +7,25 @@
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"checkSiteMap": false
+		"coverView": true,
+		"nodeModules": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": false,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"enhance": true
 	},
-	"appid": "wx87003258d57a004b",
+	"appid": "wx0b4a050fdf229609",
 	"projectname": "lifeService",
 	"libVersion": "2.2.5",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
+	"compileType": "miniprogram",
 	"condition": {
 		"search": {
 			"current": -1,

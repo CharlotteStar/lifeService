@@ -1,1 +1,52 @@
 /* pages/index/index.wxss */
+page{background-color: #FFFFFF;}
+.index_content{width:100%;position: relative;
+  line-height: 10rpx;/* 可以改变swiper上小圆点的位置 */
+}
+/*用来包裹所有的小圆点 */
+.dots{
+width: 400rpx;
+height: 36rpx;
+margin-top: 50rpx;
+position: absolute;
+bottom:0;
+right: 0;
+}
+/*未选中时的小圆点样式 */
+.dot{
+width: 8rpx;
+height: 8rpx;
+border-radius: 50%;
+margin-right: 26rpx;
+background-color: #1F1202;
+opacity:0.3;
+float: left;
+}
+
+/*选中以后的小圆点样式 */
+
+.active{
+
+width: 24rpx;
+
+height: 8rpx;
+
+border-radius: 4rpx;
+
+background-color: #1F1202;
+
+opacity:1;
+
+}
+.index_content image{width:100%;height: inherit;}
+.cint_twe{position: absolute;z-index: 2;width: 100%;text-align: center;}
+.index_title{text-align: center;margin-top:20rpx;font-size: 40rpx;}
+.hengxian{width:50rpx;height: 2rpx;background:#77D1AE;margin: 20rpx auto; }
+.server{width: 100%;display: flex;flex-flow: wrap;justify-content: space-around;background-color:  #FFFFFF;}
+.server .content_serve{width:28%;height:180rpx;text-align: center;border:1px solid #C1C1C1;font-size: 26rpx;margin-top: 20rpx;padding-top: 15rpx;position: relative;}
+.server .content_serve image{width: 100%;height: 150rpx;border:0;outline: 0;margin-top: 10rpx;}
+.index_bg{width:100%;height:650rpx;position: relative;text-align: center;}
+.index_bg .index_img{width:100%;z-index: -1;height:inherit;position: relative;}
+.indw_title{position: absolute;top:40rpx;left:50%;transform: translateX(-50%);font-size: 40rpx;}
+.index_bg .index_titlefont{width:100%;height: 200rpx;display: flex;justify-content: space-around;}
+.index_bg .index_titlefont .indw_font{width: 20%;}
