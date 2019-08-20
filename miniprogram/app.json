@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/addBusCard/addBusCard",
     "pages/index/index",
+    "pages/addBusCard/addBusCard",
     "pages/onlineRepairs/onlineRepairs",
     "pages/busCardList/busCardList",
     "pages/msgBoard/msgBoard",
