@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/addBusCard/addBusCard",
     "pages/index/index",
     "pages/onlineRepairs/onlineRepairs",
     "pages/busCardList/busCardList",
