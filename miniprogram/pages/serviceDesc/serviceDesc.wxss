@@ -1,1 +1,47 @@
 /* pages/serviceDesc/serviceDesc.wxss */
+page{background-color: #FFFFFF;}
+.index_content{width:100%;position: relative;
+  line-height: 10rpx;/* 可以改变swiper上小圆点的位置 */
+}
+.hengxian{width: 100%;height: 20rpx;background:#F0F0F0;}
+.index_content image{width:100%;height: inherit;}
+/* 切换内容 */
+.content_tab{width:100%;margin-top: 20rpx;}
+.content_tab .orderInfo{width:100%;}
+.tabNav{width:100%; height:80rpx; line-height: 80rpx; background: #fff; display: flex; padding:0 30rpx; border-bottom:1px solid #f5f5f5; box-sizing: border-box;}
+.tabNav> view{text-align: center; margin-right:50rpx;}
+.tabNav .mocolor{color:#666666;font-size: 30rpx;}
+.tabNav> view:last-child{ margin-right: 0;}
+.tabNav> view text{padding:0 15rpx; height:75rpx; display:inline-block;}
+.tabNav .cur text{ border-bottom:5rpx solid #11DB11; color:#000;font-size: 36rpx;}
+.content_tab .orderInfo .orderInfo-item{width:100%;height: 360rpx;}
+.content_tab .orderInfo .orderInfo-item .crderconter{display: flex;justify-content: space-evenly;flex-flow: wrap;}
+.content_tab .orderInfo .orderInfo-item .crderconter .crderview{width:45%;height: 150rpx;position: relative;display: flex;margin-top: 20rpx;}
+.content_tab .orderInfo .orderInfo-item .crderconter .crderview image:nth-child(1){width:100%;height: inherit;position: absolute;top:0;left:0;}
+.content_tab .orderInfo .orderInfo-item .crderconter .crderview .twoimage{width:30%;height: 80rpx;position: absolute;top:50%;right:20rpx;transform: translateY(-50%);}
+.content_tab .orderInfo .orderInfo-item .crderconter .crderview .crdtext{position: absolute;top:0;left:0;width:70%;color:white;font-size: 30rpx;top:50%;transform: translateY(-50%);padding-left: 20rpx;}
+.content_tab .orderInfo .orderInfo-item .crderconter .crderview .crdtext view:nth-child(2){
+  font-size: 24rpx;color: rgba(255,255,255,.8);  overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1; /*第三行显示 ...*/
+        -webkit-box-orient: vertical;
+}
+/* 四大服务 */
+.baozhang{width:100%;}
+.baozhang .sertitle{width:100%;text-align: center;padding-top:20rpx;}
+.baozhang .sertitle .ser_item{width:50rpx;height: 2rpx;background: #11DB11;margin: 0 auto;margin-top:20rpx;margin-bottom:50rpx;}
+.baozhang .serconter{width:100%;display: flex;justify-content: space-around;flex-flow: wrap;}
+.serconter .serconter_item{width:42%;padding-bottom:40rpx;}
+.serconter .serconter_item .item_title{display: flex;font-size: 32rpx;}
+.serconter .serconter_item .item_title image{width:40rpx;height: 35rpx;margin-top:5rpx;margin-right: 20rpx;}
+.serconter .serconter_item .item_hengxian{width:160rpx;height: 2rpx;background:#F0F0F0;margin-top:20rpx;margin-bottom:20rpx;}
+.serconter .serconter_item .item_text{font-size: 28rpx;color: #666666;}
+.mymap{width:100%;}
+.mymap .map-scope{width:100%;text-align: center;font-size: 28rpx;color:#666666;}
+.mymap .map-scope view:nth-child(1){font-size: 36rpx;text-align: center;padding-top: 20rpx;color: #000;}
+.mymap .map-scope view:nth-child(2){width:50rpx;height:2rpx;margin: 0 auto;background-color: #11DB11;margin-top: 20rpx;margin-bottom: 20rpx;}
+.mymap .srvrmap{margin-top: 20rpx;margin-bottom: 20rpx;}
+.scoptphone{width: 85%;box-shadow: 2px 7px 5px 1px rgba(0, 0, 0, 0.2);margin: 0 auto;padding:20rpx;font-size: 30rpx;color: rgb(153, 153, 153);}
+.scoptphone view:nth-child(1){font-size: 36rpx;color:#11DB11;}
+

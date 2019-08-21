@@ -5,7 +5,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    "bnrUrl": [{  //轮播图
+      "url": "../../images/index/lunbotu1.jpg"
+    }, {
+      "url": "../../images/index/lunbotu2.jpg"
+    }],
   },
 
   /**

@@ -1,3 +1,187 @@
-<!--pages/serviceDesc/serviceDesc.wxml-->
-<text>pages/serviceDesc/serviceDesc.wxml</text>
-
+<view class="index_content">
+  <swiper autoplay='true' interval='5000' duration='1000' circular='true'>
+    <block wx:for="{{bnrUrl}}" wx:key="key" wx:for-index="index">
+      <swiper-item>
+        <image src='{{item.url}}' class='u-img-slide' mode='aspectFill'></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 重设小圆点样式 -->
+  <view class="dots">
+    <block wx:for="{{imgs}}" wx:key="imgs">
+      <view class="dot{{index == currentSwiper ? ' active' : ''}}"></view>
+    </block>
+  </view>
+  <!-- 结束小圆点样式 -->
+</view>
+<view class='hengxian'></view>
+<!-- 上面维修 -->
+<view class="content_tab">
+<view class="tabNav">
+    <view wx:for="{{navTab}}" wx:key="index" data-idx="{{index}}" bindtap="currentTab" class="{{currentTab==index ? 'cur' : ''}}"><text class="mocolor">{{item}}</text>
+    </view>
+</view>
+<view class="orderInfo">
+   <view class="orderInfo-item" hidden="{{currentTab!=0}}"> 
+    <view class="crderconter">
+     <!-- 提交订单 -->
+    <view class="crderview">
+       <image src="../../images/Sdescription/m1bg.jpg"></image>
+       <view class="crdtext">
+        <view>1-提交订单</view>
+        <view>专业高品质服务</view>
+       </view>
+       <image src="../../images/Sdescription/m1.png" class="twoimage"></image>
+    </view>
+       <!-- 结束提交订单 -->
+       <!-- 提交订单 -->
+    <view class="crderview">
+       <image src="../../images/Sdescription/m2bg.jpg"></image>
+       <view class="crdtext">
+        <view>2-分配师傅</view>
+        <view>快速派单 高效服务</view>
+       </view>
+       <image src="../../images/Sdescription/m2.png" class="twoimage"></image>
+    </view>
+       <!-- 结束提交订单 -->
+  <!-- 提交订单 -->
+    <view class="crderview">
+       <image src="../../images/Sdescription/m3bg.jpg"></image>
+       <view class="crdtext">
+        <view>3-上门维修</view>
+        <view>免费上门 超时赔付</view>
+       </view>
+       <image src="../../images/Sdescription/m3.png" class="twoimage"></image>
+    </view>
+       <!-- 结束提交订单 -->
+         <!-- 提交订单 -->
+    <view class="crderview">
+       <image src="../../images/Sdescription/m4bg.jpg"></image>
+       <view class="crdtext">
+        <view>4-用户评价</view>
+        <view>30天质量保障</view>
+       </view>
+       <image src="../../images/Sdescription/m4.png" class="twoimage"></image>
+    </view>
+       <!-- 结束提交订单 -->
+    </view>
+   
+   </view> 
+      <!-- 到店维修 -->
+   <view class="orderInfo-item" hidden="{{currentTab!=1}}"> 
+    <view class="crderconter">
+     <!-- 提交订单 -->
+    <view class="crderview">
+       <image src="../../images/Sdescription/m1bg.jpg"></image>
+       <view class="crdtext">
+        <view>1-提交订单</view>
+        <view>专业高品质服务</view>
+       </view>
+       <image src="../../images/Sdescription/m1.png" class="twoimage"></image>
+    </view>
+       <!-- 结束提交订单 -->
+       <!-- 提交订单 -->
+    <view class="crderview">
+       <image src="../../images/Sdescription/m2bg.jpg"></image>
+       <view class="crdtext">
+        <view>2-自行到店</view>
+        <view>师傅一对一服务</view>
+       </view>
+       <image src="../../images/Sdescription/m9.png" class="twoimage"></image>
+    </view>
+       <!-- 结束提交订单 -->
+  <!-- 提交订单 -->
+    <view class="crderview">
+       <image src="../../images/Sdescription/m3bg.jpg"></image>
+       <view class="crdtext">
+        <view>3-邮递寄回</view>
+        <view>隐私安全 损坏赔付</view>
+       </view>
+       <image src="../../images/Sdescription/m10.png" class="twoimage"></image>
+    </view>
+       <!-- 结束提交订单 -->
+         <!-- 提交订单 -->
+    <view class="crderview">
+       <image src="../../images/Sdescription/m4bg.jpg"></image>
+       <view class="crdtext">
+        <view>4-用户评价</view>
+        <view>30天质量保障</view>
+       </view>
+       <image src="../../images/Sdescription/m4.png" class="twoimage"></image>
+    </view>
+       <!-- 结束提交订单 -->
+    </view>
+    </view> 
+    <!-- 结束到店维修 -->
+</view>
+</view>
+<view class='hengxian'></view>
+<!-- 四大服务保障 -->
+<view class='baozhang'>
+<view class='sertitle'>
+  <view>四大服务保障</view>
+  <view class='ser_item'></view>
+</view>
+<view class='serconter'>
+ <!-- 严选开始 -->
+<view class='serconter_item'>
+ <view class='item_title'>
+  <image src="../../images/Sdescription/m5.png"></image>
+  <text>严选品质</text>
+ </view>
+  <view class='item_hengxian'></view>
+  <view class="item_text">严选供应商优质配件，所选配件均经过相应检测机构多道检测把控，质量有保障。</view>
+</view>
+<!-- 严选结束 -->
+ <!-- 严选开始 -->
+<view class='serconter_item'>
+ <view class='item_title'>
+  <image src="../../images/Sdescription/m6.png"></image>
+  <text>专业技术</text>
+ </view>
+  <view class='item_hengxian'></view>
+  <view class="item_text">维修师傅均经过专业培训，定期技术考核，持有相应职业资格证上岗。</view>
+</view>
+<!-- 严选结束 -->
+ <!-- 严选开始 -->
+<view class='serconter_item'>
+ <view class='item_title'>
+  <image src="../../images/Sdescription/m7.png"></image>
+  <text>维修录像</text>
+ </view>
+  <view class='item_hengxian'></view>
+  <view class="item_text">根据客户需求，可全程录像维修，避免偷工减料私换配件。</view>
+</view>
+<!-- 严选结束 -->
+ <!-- 严选开始 -->
+<view class='serconter_item'>
+ <view class='item_title'>
+  <image src="../../images/Sdescription/m8.png"></image>
+  <text>售后无忧</text>
+ </view>
+  <view class='item_hengxian'></view>
+  <view class="item_text">对维修过的设备提供长达30天质保，价格透明统一。</view>
+</view>
+<!-- 严选结束 -->
+</view>
+</view>
+<view class='hengxian'></view>
+<!-- 上门服务范围 -->
+<view class="mymap">
+ <view class="map-scope">
+   <view>上门服务范围</view>
+   <view></view>
+   <view>我们的服务网点遍布广州市十多个主要地区</view>
+   <view>网点附近10公里提供上门服务。</view>
+ </view>
+ <view class="srvrmap">
+ <map id="map" longitude='113.273837' latitude='23.121284' scale='14' show-location='{{myshow}}' style='width:100%;height:600rpx;' controls='{{controls}}' markers=''>
+</map>
+</view>
+</view>
+<!-- 结束上门服务范围 -->
+<view class="scoptphone">
+<view>服务监督及咨询热线：020-868205</view>
+<view>1、如需了解所在地区是否在服务范围内，请咨询客服</view>
+<view>2、如师傅在服务过程出现违规操作，欢迎监督举报</view>
+</view>
