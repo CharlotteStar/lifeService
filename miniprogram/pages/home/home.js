@@ -1,33 +1,17 @@
-// pages/serviceDesc/serviceDesc.js
+// pages/home/home.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    "bnrUrl": [{  //轮播图
-      "url": "../../images/Sdescription/shuoming1.jpg"
-    }, {
-      "url": "../../images/index/lunbotu2.jpg"
-    }],
-    navTab: ['上门维修', '到店维修'],
-    currentTab: 0,  //切换tab内容
-    sendList: [],
+    active:'shouye',
   },
-  currentTab: function (e) { //点击切换内容
-    if (this.data.currentTab == e.currentTarget.dataset.idx) {
-      return;
-    }
-    this.setData({
-      currentTab: e.currentTarget.dataset.idx
-    })
-    /*this.select = {
-      page: 1,
-      size: 6,
-      isEnd: false
-    }*/
-    this.data.sendList = [];
-    //this.getData()
+
+  toggleTab(e) {
+    var active = e.currentTarget.dataset.name;
+    this.setData({ active });
+    console.log(this.data.active);
   },
   /**
    * 生命周期函数--监听页面加载

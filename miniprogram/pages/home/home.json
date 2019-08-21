@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "index":"/pages/index/index",
+    "me":"/pages/me/me",
+    "busCardList":"/pages/busCardList/busCardList",
+    "onlineRepairs":"/pages/onlineRepairs/onlineRepairs",
+    "serviceDesc": "/pages/serviceDesc/serviceDesc"
+  }
+}

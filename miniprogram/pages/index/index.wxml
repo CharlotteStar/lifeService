@@ -1,5 +1,8 @@
 <!--pages/index/index.wxml-->
 
+
+
+
 <view class="index_content">
   <swiper class='u-wrp-bnr' indicator-dots='true' autoplay='true' interval='5000' duration='1000' circular='true' indicator-color='#2E266E' indicator-active-color='white'>
     <block wx:for="{{bnrUrl}}" wx:key="key" wx:for-index="index">
@@ -14,7 +17,6 @@
       <view class="dot{{index == currentSwiper ? ' active' : ''}}"></view>
     </block>
   </view>
-
   <!-- 结束小圆点样式 -->
 </view>
 <view class="index_title">
@@ -128,7 +130,7 @@
     </view>
     <view class="user_inctont">
       <text class="textred">*</text>
-      <text class="text_contacts">单选按钮：</text>
+      <text class="text_contacts">选择服务：</text>
     </view>
     <view>
       <van-radio-group value="{{ radio }}" bindchange="onChange" class="serverradio">
@@ -147,43 +149,63 @@
     </view>
     <view>
       <van-cell-group custom-style="phonebg">
-        <van-field value="{{ sms }}" center clearable placeholder="请拍照上传"  use-button-slot readonly>
+    
           <van-button slot="button" size="small" type="primary" bindtap="tianjia">点击上传</van-button>
-        </van-field>
+     
       </van-cell-group>
     </view>
-     <!-- 结束上传图片 -->
-     <view class="user_inctont">
+      <!-- 照片展示 -->
+      <view>
+            <image wx:for="{{images}}" wx:key="index" src="{{item}}" lazy-load='true' class='comment-img'></image>
+          </view>
+    <!-- 结束上传图片 -->
+    <view class="user_inctont">
       <text class="textred">*</text>
       <text class="text_contacts">故障说明：</text>
     </view>
-     <view class="textarea-wrp">
-      <textarea auto-focus="true" style="height: 250rpx" placeholder="请输入留言"/>
+    <view class="textarea-wrp">
+      <textarea style="height: 250rpx" placeholder="请输入留言" />
     </view>
-    <van-button type="primary" size="large">马上提交</van-button>
+    <van-button type="primary" size="large" bindtap="mysubmit">马上提交</van-button>
     <view class="tment_kt">
-    <view class="tehengxian"></view>
-    <view class="tehencolor">服务案例</view>
-    <view class="tehengxian"></view>
-  </view>
+      <view class="tehengxian"></view>
+      <view class="tehencolor">服务案例</view>
+      <view class="tehengxian"></view>
+    </view>
   </view>
 </view>
 <!-- 服务案例 -->
 <view class="Service_case">
- <view class="service_item">
-   <view class="service_img"><image src="../../images/index/dibu1.jpg"></image></view>
-   <view class="service_text"><text>XX小区住户电路维修</text></view>
- </view>
   <view class="service_item">
-   <view class="service_img"><image src="../../images/index/dibu2.jpg"></image></view>
-   <view class="service_text"><text>XX小区窗户维修保养</text></view>
- </view>
+    <view class="service_img">
+      <image src="../../images/index/dibu1.jpg"></image>
+    </view>
+    <view class="service_text">
+      <text>虹色小区住户电路维修</text>
+    </view>
+  </view>
   <view class="service_item">
-   <view class="service_img"><image src="../../images/index/dibu3.jpg"></image></view>
-   <view class="service_text"><text>XX区住户冰箱不制冷</text></view>
- </view>
+    <view class="service_img">
+      <image src="../../images/index/dibu2.jpg"></image>
+    </view>
+    <view class="service_text">
+      <text>富豪小区窗户维修保养</text>
+    </view>
+  </view>
   <view class="service_item">
-   <view class="service_img"><image src="../../images/index/dibu4.jpg"></image></view>
-   <view class="service_text"><text>电视闪屏到店维修</text></view>
- </view>
+    <view class="service_img">
+      <image src="../../images/index/dibu3.jpg"></image>
+    </view>
+    <view class="service_text">
+      <text>美景区住户冰箱不制冷</text>
+    </view>
+  </view>
+  <view class="service_item">
+    <view class="service_img">
+      <image src="../../images/index/dibu4.jpg"></image>
+    </view>
+    <view class="service_text">
+      <text>电视闪屏到店维修</text>
+    </view>
+  </view>
 </view>
