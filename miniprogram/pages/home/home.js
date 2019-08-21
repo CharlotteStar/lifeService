@@ -11,13 +11,24 @@ Page({
   toggleTab(e) {
     var active = e.currentTarget.dataset.name;
     this.setData({ active });
-    console.log(this.data.active);
+    wx.setStorage({
+      key: "active",
+      data: active
+    })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.getStorage({
+      key: 'active',
+      success:res=> {
+        var active=res.data
+        if(active){
+          this.setData({active});
+        }
+      }
+    })
   },
 
   /**

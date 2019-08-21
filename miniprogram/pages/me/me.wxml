@@ -1,3 +1,75 @@
 <!--pages/onlineRepairs/onlineRepairs.wxml-->
-<text>pages/me/me.wxml</text>
 
+<view class="user-detail">
+  <view class="user-header">
+    <view style="display:inline-block" bindtap="login">
+      <image src="/images/icon/head.png" class="head-icon-wrap" mode="aspectFit"></image>
+      <view class="user-name">请点击登录</view>
+    </view>
+  </view>
+  <view class="user-container">
+    <view class="info-wrapper ">
+
+      <view class="info-detail-item">
+        <view class="all-order">所有订单</view>
+        <view class="order-status-wrap">
+          <view class="order-status">
+            <view class="status-icon wait-pay"></view>
+            <view>待支付</view>
+            <view class="tip-bubble">1</view>
+          </view>
+          <view class="order-status">
+            <view class="status-icon order-underway"></view>
+            <view>进行中</view>
+            <view class="tip-bubble">3</view>
+          </view>
+          <view class="order-status">
+            <view class="status-icon order-complete"></view>
+            <view>已完成</view>
+          </view>
+          <view class="order-status">
+            <view class="status-icon order-cancel"></view>
+            <view>已取消</view>
+          </view>
+        </view>
+      </view>
+
+      <view class="info-detail-item view-all">
+        <view class="message-header">最新消息</view>
+        <view class="message-item">
+          <view class="service-info">
+            <view class="service-img-wrap"></view>
+            <view class="service-name ellipsis">小程序服务示例数据</view>
+            <view class="service-intro ellipsis">专业提供微信小程序管理、设计服务</view>
+          </view>
+          <view class="message"></view>
+        </view>
+        <view class="view-more">
+          查看更多
+        </view>
+      </view>
+
+      <view class="info-detail-item user-info">
+        <view class="info-item address">
+          <view class="item-icon address-icon"></view>
+          <text class="item-text">XXX省XXX市XXX县XXX路XXX号</text>
+          <text class="dist">100m</text>
+          <view class="more-icon"></view>
+        </view>
+        <view class="info-item phone">
+          <view class="item-icon phone-icon"></view>
+          <view class="item-text">13000000000</view>
+          <view class="more-icon"></view>
+        </view>
+        <view class="info-item companyTime">
+          <view class="item-icon company-time-icon"></view>
+          <view class="item-text">周一至周五9:00-18:00</view>
+        </view>
+        <view class="info-item introduction">
+          <view class="item-icon introduction-icon"></view>
+          <view class="item-text">这是预约类生活服务模板</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

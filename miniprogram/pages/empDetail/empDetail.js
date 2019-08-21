@@ -1,40 +1,29 @@
-// pages/me/me.js
+// pages/empDetail/empDetail.js
+const db = wx.cloud.database({
+  env: "wei-6pifm"
+});
+
 
 Page({
+
   /**
    * 页面的初始数据
    */
   data: {
-
+    empData:{}
   },
 
-  getUserInfo(){
-    wx.getUserInfo({
-      success(res){
-        console.log(res.userInfo);
-        wx.setStorage({
-          key: 'userInfo',
-          data: res.userInfo,
-        })
-      }
-    })
-  },
-  login(){
-    // 可以通过 wx.getSetting 先查询一下用户是否授权了 "scope.record" 这个 scope
-    wx.getSetting({
-      success(res) {
-        console.log(res.authSetting['scope.userInfo']);
-        if (!res.authSetting['scope.userInfo']) {
-          
-        }
-      }
-    })
-  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    db.collection("staff").where({
+      _id: options.eid
+    }).get().then(res => {
+      var empData=res.data[0];
+      this.setData({empData});
+      console.log(empData);
+    });
   },
 
   /**

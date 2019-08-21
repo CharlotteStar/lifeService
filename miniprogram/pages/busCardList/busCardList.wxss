@@ -1,1 +1,62 @@
 /* pages/busCardList/busCardList.wxss */
+
+.cardList-module {
+    position: relative;
+    overflow: hidden;
+    font-size:28rpx;
+    height: 100%;
+    background-color: #f5f5f5;
+    color: #353535;
+}
+.module_bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:#fff;
+}
+.cardList-module .small-box-list {
+    padding: 5px 15px;
+    overflow: hidden;
+}
+.cardList-module .small-box-list .item-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 4px;
+    position: relative;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+.cardList-module .small-box-list .item-box:last-child {
+    border-bottom: none;
+}
+.cardList-module .small-box-list .img-wrapper {
+    width: 60px;
+    height: 60px;
+    margin-right: 12px;
+    border-radius: 4px;
+    flex-shrink: 0;
+    background-image: url(/images/icon/head.png?v=201801221411);
+    background-repeat: no-repeat;
+}
+.bd-show {
+    border: 1px solid #eee;
+}
+
+.cardList-module .small-box-list .info {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    width: 250px;
+}
+.cardList-module .small-box-list .icon-phone {
+    width:55rpx;
+    height:55rpx;
+    margin-right:15rpx;
+}
