@@ -1,0 +1,12 @@
+
+.jz-counter-btn
+.footer-logo:before ,
+.business-card .connect-item::after,
+.business-card .qr-code::after,
+.user-detail .item-icon,
+.user-detail .view-more:before,
+.user-detail .status-icon,
+.user-detail .all-order:after,
+.user-detail .more-icon{
+  background-image:url(http://wwwhui.top/images/mgbg1.png);
+}

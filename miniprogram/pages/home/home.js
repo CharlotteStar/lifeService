@@ -1,4 +1,9 @@
 // pages/home/home.js
+const db = wx.cloud.database({
+  env: "yuan-p9q0n"
+});
+
+
 Page({
 
   /**
@@ -28,7 +33,7 @@ Page({
           this.setData({active});
         }
       }
-    })
+    });
   },
 
   /**
@@ -42,7 +47,15 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    // db.collection("comment").where({
+    //   _openid: "oKAww5ajWbOw4qkWnGE8Nx-uM0sA"
+    // }).get().then(res => {
+    //   var mbg01='background-image:url(' + res.data[0].mbg + ')';
+    //   wx.setStorage({
+    //     key: "mbg01",
+    //     data: mbg01
+    //   })
+    // });
   },
 
   /**

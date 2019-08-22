@@ -1,6 +1,8 @@
 {
   "pages": [
+    "pages/addService/addService",
     "pages/home/home",
+    
     "pages/me/me",
     "pages/index/index",
     "pages/addBusCard/addBusCard",

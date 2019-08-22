@@ -8,9 +8,9 @@
           <view class="card-intro">
             <view class="intro-content">
               <view class="firm-name ellipsis">暂无公司名称</view>
-              <view class="name ellipsis">黄师傅</view>
-              <view class="job ellipsis">水电</view>
-              <image class="head-icon"></image>
+              <view class="name ellipsis">{{empData.name}}</view>
+              <view class="job ellipsis">{{empData.post}}</view>
+              <image class="head-icon" src="{{empData.avatar}}"></image>
             </view>
             <view class="intro-footer">
               <text>我的名片</text>
@@ -23,10 +23,10 @@
               <view class="nav-item about">关于我</view>
             </view>
             <view class="connect-content">
-              <view class="connect-item phone">13729412134</view>
-              <view class="connect-item ellipsis email">973165084@qq.com</view>
-              <view class="connect-item ellipsis address">广州越秀区</view>
-              <view class="connect-item ellipsis wechatId">yuan973165084</view>
+              <view class="connect-item phone">{{empData.phone}}</view>
+              <view class="connect-item ellipsis email">{{empData.email}}</view>
+              <view class="connect-item ellipsis address">{{empData.address.city}}{{empData.address.specific}}</view>
+              <view class="connect-item ellipsis wechatId">{{empData.wxid}}</view>
             </view>
             <view class="about-content">
               <view style="line-height:1.5em;">哈哈哈</view>

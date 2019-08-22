@@ -1,0 +1,64 @@
+/* pages/addService/addService.wxss */
+.addService{
+  font-size:28rpx;
+}
+.addService-item{
+  display:flex;
+  align-items: center;
+  padding:15rpx 25rpx;
+}
+
+.addService-item text{
+  min-width:140rpx;
+  text-align: right;
+}
+.addService-input{
+  flex-grow: 1;
+  border:1px solid #eee;
+  border-radius:8rpx;
+  overflow: hidden;
+  margin:0 10rpx;
+}
+.showImage-box{
+  display:flex;
+  flex-grow:1;
+  flex-wrap: wrap;
+}
+.showImage{
+  width: 160rpx;
+  height: 160rpx;
+  min-width:160rpx;
+  min-height:160rpx;
+  margin:10rpx;
+  background:#aaa;
+  
+}
+.jz_upload {
+    box-sizing: border-box;
+    min-width: 160rpx;
+    width:160rpx;
+    height: 160rpx;
+    border: 1px dashed #ccc;
+    line-height: 160rpx;
+    color: #666;
+    cursor: pointer;
+    text-align: center;
+    overflow: hidden;
+    margin:10rpx;
+}
+.jz_upload_icon {
+    display: inline-block;
+    width: 32px;
+    height: 35px;
+    vertical-align: middle;
+    background: no-repeat -323px -33px;
+}
+.addService-radio{
+  display:flex;
+}
+.addService-radio van-radio{
+  margin:0 10rpx;
+}
+
+
+@import '/style/component.wxss'

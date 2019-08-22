@@ -1,0 +1,63 @@
+/* components/inputNumber/input.wxss */
+
+.jz-input-number-counter {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    pointer-events: initial;
+}
+.jz-input-number {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    pointer-events: initial;
+    font-size: 13px;
+}
+.jz-input-number-counter .input-number-input {
+    padding-left: 20px;
+}
+.jz-input-number .input-number-input {
+    display: block;
+    height: 34px;
+    border: 1px solid #e3e2e8;
+    border-radius: 2px;
+    padding: 0 8px 0 20px;
+    background-color: #FFF;
+    box-sizing: border-box;
+    font-size: 13px;
+    font-family: 微软雅黑;
+    color: #333;
+    text-overflow: ellipsis;
+    text-indent: 0;
+    width: 148px;
+}
+
+.jz-input-counter {
+    display: inline-block;
+    width: 25px;
+    height: 32px;
+    vertical-align: middle;
+    border-left: 1px solid #e3e2e8;
+    border-radius: 2px;
+    position: absolute;
+    right: 1px;
+    top: 1px;
+}
+
+.jz-counter-btn {
+    display: block;
+    vertical-align: top;
+    width: 100%;
+    height: 16px;
+    cursor: pointer;
+    background: url(http://wwwhui.top/images/mgbg1.png) no-repeat;
+    background-position: -1575px -115px;
+    outline: 0;
+    border: none;
+    position:relative;
+    z-index:20
+}
+.jz-counter-btn.reduce {
+    transform: rotate(180deg) translateX(6rpx);
+}
+@import '../../style/mbg01.wxss';

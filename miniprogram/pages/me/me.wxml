@@ -14,21 +14,21 @@
         <view class="all-order">所有订单</view>
         <view class="order-status-wrap">
           <view class="order-status">
-            <view class="status-icon wait-pay"></view>
+            <view class="status-icon wait-pay" style="{{mbg01}}"></view>
             <view>待支付</view>
             <view class="tip-bubble">1</view>
           </view>
           <view class="order-status">
-            <view class="status-icon order-underway"></view>
+            <view class="status-icon order-underway" style="{{mbg01}}"></view>
             <view>进行中</view>
             <view class="tip-bubble">3</view>
           </view>
           <view class="order-status">
-            <view class="status-icon order-complete"></view>
+            <view class="status-icon order-complete" style="{{mbg01}}"></view>
             <view>已完成</view>
           </view>
           <view class="order-status">
-            <view class="status-icon order-cancel"></view>
+            <view class="status-icon order-cancel" style="{{mbg01}}"></view>
             <view>已取消</view>
           </view>
         </view>
@@ -38,35 +38,36 @@
         <view class="message-header">最新消息</view>
         <view class="message-item">
           <view class="service-info">
-            <view class="service-img-wrap"></view>
+            <view class="service-img-wrap" ></view>
             <view class="service-name ellipsis">小程序服务示例数据</view>
             <view class="service-intro ellipsis">专业提供微信小程序管理、设计服务</view>
           </view>
           <view class="message"></view>
         </view>
         <view class="view-more">
+          <view class="before"  style="{{mbg01}}"></view>
           查看更多
         </view>
       </view>
 
       <view class="info-detail-item user-info">
         <view class="info-item address">
-          <view class="item-icon address-icon"></view>
+          <view class="item-icon address-icon" style="{{mbg01}}"></view>
           <text class="item-text">XXX省XXX市XXX县XXX路XXX号</text>
           <text class="dist">100m</text>
           <view class="more-icon"></view>
         </view>
         <view class="info-item phone">
-          <view class="item-icon phone-icon"></view>
+          <view class="item-icon phone-icon" style="{{mbg01}}"></view>
           <view class="item-text">13000000000</view>
           <view class="more-icon"></view>
         </view>
         <view class="info-item companyTime">
-          <view class="item-icon company-time-icon"></view>
+          <view class="item-icon company-time-icon" style="{{mbg01}}"></view>
           <view class="item-text">周一至周五9:00-18:00</view>
         </view>
         <view class="info-item introduction">
-          <view class="item-icon introduction-icon"></view>
+          <view class="item-icon introduction-icon" style="{{mbg01}}"></view>
           <view class="item-text">这是预约类生活服务模板</view>
         </view>
       </view>

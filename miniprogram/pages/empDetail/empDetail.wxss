@@ -107,12 +107,12 @@
     height: 100%;
     display: inline-block;
     vertical-align: top;
-    background: url(/images/icon/mbg01.png?v=201908141252) no-repeat -1383px -315px;
+    background: no-repeat -1383px -315px;
 }
 .business-card .card-content {
     width: 315px;
     min-height: 200px;
-    padding-left: 20px;
+    padding-left: 0px;
     margin: auto;
 }
 .business-card .card-nav {
@@ -153,7 +153,7 @@
     display: inline-block;
     position: absolute;
     top: 0;
-    background: url(/images/icon/mbg01.png?v=201908141252) no-repeat -1169px -277px;
+    background:  no-repeat -1169px -277px;
     bottom: 0;
     right: 0;
     margin: auto;
@@ -199,7 +199,7 @@
     margin-right: 7px;
     display: inline-block;
     vertical-align: middle;
-    background: url(/images/icon/mbg01.png?v=201908141252) no-repeat -1280px 0;
+    background: no-repeat -1280px 0;
 }
 
 .ellipsis {
@@ -245,3 +245,5 @@
     cursor: pointer;
     font-size:28rpx
 }
+
+@import '/style/mbg01.wxss';

@@ -1,0 +1,123 @@
+
+
+<view class="addService">
+  <van-cell-group class="addService-item">
+    <text>名称：</text>
+    <van-field
+      value="{{ name }}"
+      class="addService-input"
+      placeholder="请输入服务的名称"
+      bind:change="onNameChange"
+    />
+  </van-cell-group>
+
+  <van-cell-group class="addService-item">
+    <text>摘要：</text>
+    <van-field
+      value="{{ digest }}"
+      class="addService-input"
+      placeholder="请输入服务的主要内容(选填)"
+      bind:change="onDigestChange"
+    />
+  </van-cell-group>
+
+  <van-cell-group class="addService-item">
+    <text>主图：</text>
+    
+    <view  class="showImage-box">
+      <view class="jz_upload jz_photo_list_upload jz_upload_normal" bindtap="chooseImage">
+        <view class="jz_upload_icon" ></view>
+      </view>
+      <image 
+        src="{{item}}" 
+        mode="aspectFill" 
+        class="showImage" 
+        wx:for="{{showImage}}" wx:key="index">
+      </image>
+    </view>
+  </van-cell-group>
+
+  <van-cell-group class="addService-item">
+    <text>服务分类：</text>
+
+    <van-field
+      value="{{ selectedService }}"
+      class="addService-input"
+      style="flex-grow:0;"
+      placeholder="请输入服务的类别"
+      bind:change="onServiceTypeChange"
+      bindtap="selectServiceType"
+      disabled
+    />
+    <van-popup
+      show="{{ showServiceType }}"
+      position="bottom"
+      overlay="{{ true }}"
+      bind:close="onClose"
+    >
+      <van-picker
+        show-toolbar
+        title="服务类型"
+        columns="{{ serviceType }}"
+        bind:cancel="onCancel"
+        bind:confirm="onConfirm"
+      />
+    </van-popup>
+  </van-cell-group>
+
+  <van-cell-group class="addService-item">
+    <text>价格类型：</text>
+    <van-radio-group value="{{ priceType }}" bind:change="onPriceTypeChange" class="addService-radio">
+      <van-radio name="moren" checked-color="#2e2">默认</van-radio>
+      <van-radio name="mianfei" checked-color="#2e2">免费</van-radio>
+      <van-radio name="mianyi" checked-color="#2e2">面议</van-radio>
+    </van-radio-group>
+  </van-cell-group>
+  
+  <van-cell-group class="addService-item">
+    <text>价格：</text>
+    <van-field
+      value="{{ price }}"
+      class="addService-input"
+      style="flex-grow:0;text-align:center"
+      placeholder="请输入服务的价格"
+      bind:change="onPriceChange"
+    />
+    元
+  </van-cell-group>
+
+  <van-cell-group class="addService-item">
+    <text>促销价格：</text>
+    <van-field
+      value="{{ promotion }}"
+      class="addService-input"
+      style="flex-grow:0;text-align:center"
+      placeholder="请输入促销的价格"
+      bind:change="onPromotionChange"
+    />
+    元
+  </van-cell-group>
+
+   <van-cell-group class="addService-item">
+    <text>价格类型：</text>
+    <van-radio-group value="{{ appointment }}" bind:change="onAppointmentChange" class="addService-radio">
+      <van-radio name="on" checked-color="#2e2">开启</van-radio>
+      <van-radio name="off" checked-color="#2e2">关闭</van-radio>
+    </van-radio-group>
+  </van-cell-group>
+
+  <van-cell-group class="addService-item">
+    <text>限制预约量：</text>
+    <van-radio-group value="{{ astrict }}" bind:change="onAstrictChange" class="addService-radio">
+      <van-radio name="on" checked-color="#2e2">是</van-radio>
+      <van-radio name="off" checked-color="#2e2">否</van-radio>
+    </van-radio-group>
+  </van-cell-group>
+
+  <van-cell-group class="addService-item">
+    <text>虚拟订单量：</text>
+    <input-number value="{{fakeCount}}" maxlength="100"></input-number>
+  </van-cell-group>
+
+  
+</view>
