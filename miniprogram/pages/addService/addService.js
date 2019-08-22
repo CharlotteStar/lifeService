@@ -7,32 +7,43 @@ Page({
   data: {
     priceType:'moren',
     appointment:"on",
-    astrict:"off",
+    isAstrict:"off",
     showImage:[],
     fakeCount:1,
     serviceType: ['厨卫维修', '家电维修', '电子产品'],
     selectedService: '厨卫维修',
-    showServiceType:false
+    showServiceType:false,
+    showSetTime: false,
   },
 
   selectServiceType(){
     this.setData({ showServiceType: true });
   },
-  onConfirm(event){
+
+  onSelectedServiceConfirm(event){
     const { picker, value, index } = event.detail;
     this.setData({ selectedService: value });
+    this.onSelectedServiceClose();
   },
-  onCancel(){
+  onSelectedServiceClose() {
     this.setData({ showServiceType: false });
   },
-  onClose() {
-    this.setData({ showServiceType: false });
+  onSelectedServiceCancel(){
+    this.onSelectedServiceClose();
+  },
+  
+  setAppointmentTime() {
+    this.setData({ showSetTime: true })
+  },
+  setTimeClose() {
+    this.setData({ showSetTime: false });
   },
   onServiceTypeChange(e){
 
   },
   onPriceTypeChange(e){
-    this.setData({priceType:e.detail})
+    this.setData({priceType:e.detail});
+    console.log(this.data.priceType);
   },
   onPriceChange(e){
     
@@ -40,8 +51,8 @@ Page({
   onAppointmentChange(e){
     this.setData({ appointment: e.detail })
   },
-  onAstrictChange(e) {
-    this.setData({ astrict: e.detail })
+  onIsAstrictChange(e) {
+    this.setData({ isAstrict: e.detail });
   },
   onFakeChange(){
     

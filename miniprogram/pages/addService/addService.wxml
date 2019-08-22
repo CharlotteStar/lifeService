@@ -6,6 +6,7 @@
     <van-field
       value="{{ name }}"
       class="addService-input"
+      custom-style="padding:10rpx 30rpx;font-size:28rpx;"
       placeholder="请输入服务的名称"
       bind:change="onNameChange"
     />
@@ -16,6 +17,7 @@
     <van-field
       value="{{ digest }}"
       class="addService-input"
+      custom-style="padding:10rpx 30rpx;font-size:28rpx;
       placeholder="请输入服务的主要内容(选填)"
       bind:change="onDigestChange"
     />
@@ -43,6 +45,7 @@
     <van-field
       value="{{ selectedService }}"
       class="addService-input"
+      custom-style="padding:10rpx 30rpx;font-size:28rpx;
       style="flex-grow:0;"
       placeholder="请输入服务的类别"
       bind:change="onServiceTypeChange"
@@ -53,14 +56,16 @@
       show="{{ showServiceType }}"
       position="bottom"
       overlay="{{ true }}"
-      bind:close="onClose"
+      bind:close="onSelectedServiceClose"
+      duration="300"
     >
       <van-picker
         show-toolbar
         title="服务类型"
         columns="{{ serviceType }}"
-        bind:cancel="onCancel"
-        bind:confirm="onConfirm"
+        bind:cancel="onSelectedServiceCancel"
+        bind:confirm="onSelectedServiceConfirm"
+        active-class="selectedService"
       />
     </van-popup>
   </van-cell-group>
@@ -74,11 +79,12 @@
     </van-radio-group>
   </van-cell-group>
   
-  <van-cell-group class="addService-item">
+  <van-cell-group class="addService-item" class="addService-item {{priceType=='moren' ? '' : 'd-none' }}">
     <text>价格：</text>
     <van-field
       value="{{ price }}"
       class="addService-input"
+      custom-style="padding:10rpx 30rpx;font-size:28rpx;
       style="flex-grow:0;text-align:center"
       placeholder="请输入服务的价格"
       bind:change="onPriceChange"
@@ -86,11 +92,12 @@
     元
   </van-cell-group>
 
-  <van-cell-group class="addService-item">
+  <van-cell-group class="addService-item {{priceType=='moren' ? '' : 'd-none' }}">
     <text>促销价格：</text>
     <van-field
       value="{{ promotion }}"
       class="addService-input"
+      custom-style="padding:10rpx 30rpx;font-size:28rpx;
       style="flex-grow:0;text-align:center"
       placeholder="请输入促销的价格"
       bind:change="onPromotionChange"
@@ -108,10 +115,18 @@
 
   <van-cell-group class="addService-item">
     <text>限制预约量：</text>
-    <van-radio-group value="{{ astrict }}" bind:change="onAstrictChange" class="addService-radio">
+    <van-radio-group value="{{ isAstrict }}" bind:change="onIsAstrictChange" class="addService-radio">
       <van-radio name="on" checked-color="#2e2">是</van-radio>
       <van-radio name="off" checked-color="#2e2">否</van-radio>
     </van-radio-group>
+    <text bindtap="setAppointmentTime" style="color:#23e" class="{{isAstrict=='on'?'':'d-none'}}">时间设置</text>
+    <van-popup
+      show="{{ showSetTime }}"
+      position="top"
+      bind:close="setTimeClose"
+    >
+      <appointment-time></appointment-time>
+    </van-popup>
   </van-cell-group>
 
   <van-cell-group class="addService-item">

@@ -60,5 +60,38 @@
   margin:0 10rpx;
 }
 
+.selectedService{
+  background:rgba(0,0,0,.1);
+  font-size:#000;
+}
+.transitions{
+  transition:all 0.3s;
+}
+
+
+/* .checkbox::before{
+  content:'';
+  display:inline-block;
+  border:1px solid #ccc;
+  width:35rpx;height:35rpx;
+  vertical-align: middle;
+  border-radius:8rpx;
+  margin-right:10rpx;
+}
+.checkboxSelected{
+  display:block;
+  position:absolute;
+  width:20rpx;
+  height:10rpx;
+  border-left:2px solid #8f8;
+  border-bottom:2px solid #8f8;
+  transform:rotate(-50deg) translateY(-50%);
+  left:32rpx;top:45%;
+} */
+
+
+.d-none{
+  display:none;
+}
 
 @import '/style/component.wxss'

@@ -5,6 +5,7 @@
     "van-radio-group": "vant-weapp/radio-group/index",
     "input-number":"/components/inputNumber/input",
     "van-popup": "vant-weapp/popup/index",
-    "van-picker": "vant-weapp/picker/index"
+    "van-picker": "vant-weapp/picker/index",
+    "appointment-time":"/components/appointmentTime/appointmentTime"
   }
 }
