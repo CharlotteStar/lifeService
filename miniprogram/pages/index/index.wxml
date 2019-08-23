@@ -1,13 +1,9 @@
 <!--pages/index/index.wxml-->
-
-
-
-
 <view class="index_content">
   <swiper class='u-wrp-bnr' indicator-dots='true' autoplay='true' interval='5000' duration='1000' circular='true' indicator-color='#2E266E' indicator-active-color='white'>
     <block wx:for="{{bnrUrl}}" wx:key="key" wx:for-index="index">
       <swiper-item>
-        <image src='{{item.url}}' class='u-img-slide' mode='aspectFill'></image>
+        <image src='{{item.url}}' class='u-img-slide' mode='aspectFill' lazy-load></image>
       </swiper-item>
     </block>
   </swiper>
@@ -29,7 +25,7 @@
       <view class="cint_twe">
         <text>水路管件</text>
       </view>
-      <image src="../../images/index/index1.jpg"></image>
+      <image src="cloud://yuan-p9q0n.7975-yuan-p9q0n/index/index1.jpg"></image>
     </navigator>
   </view>
   <view class="content_serve">
@@ -37,7 +33,7 @@
       <view class="cint_twe">
         <text>电路灯具</text>
       </view>
-      <image src="../../images/index/index2.jpg"></image>
+      <image src="cloud://yuan-p9q0n.7975-yuan-p9q0n/index/index2.jpg"></image>
     </navigator>
   </view>
   <view class="content_serve">
@@ -45,7 +41,7 @@
       <view class="cint_twe">
         <text>家用电器</text>
       </view>
-      <image src="../../images/index/index3.jpg"></image>
+      <image src="cloud://yuan-p9q0n.7975-yuan-p9q0n/index/index3.jpg"></image>
     </navigator>
   </view>
   <view class="content_serve">
@@ -53,7 +49,7 @@
       <view class="cint_twe">
         <text>厨具卫浴</text>
       </view>
-      <image src="../../images/index/index4.jpg"></image>
+      <image src="cloud://yuan-p9q0n.7975-yuan-p9q0n/index/index4.jpg"></image>
     </navigator>
   </view>
   <view class="content_serve">
@@ -61,7 +57,7 @@
       <view class="cint_twe">
         <text>办公设备</text>
       </view>
-      <image src="../../images/index/index5.jpg"></image>
+      <image src="cloud://yuan-p9q0n.7975-yuan-p9q0n/index/index5.jpg"></image>
     </navigator>
   </view>
   <view class="content_serve">
@@ -69,14 +65,14 @@
       <view class="cint_twe">
         <text>电子产品</text>
       </view>
-      <image src="../../images/index/index6.jpg"></image>
+      <image src="cloud://yuan-p9q0n.7975-yuan-p9q0n/index/index6.jpg"></image>
     </navigator>
   </view>
 </view>
 <!-- 结束更全面 -->
 <!-- 开始专业服务 -->
 <view class="index_bg">
-  <image src="../../images/index/index_bg.jpg" class="index_img"></image>
+  <image src="cloud://yuan-p9q0n.7975-yuan-p9q0n/index/index_bg.jpg" class="index_img" lazy-load></image>
   <view class="indw_title">
     <text>专业服务 信心保证</text>
     <view class="hengxian"></view>
@@ -153,8 +149,11 @@
       </van-cell-group>
     </view>
       <!-- 照片展示 -->
-      <view>
-            <image wx:for="{{images}}" wx:key="index" src="{{item}}" lazy-load='true' class='comment-img'></image>
+          <view>
+            <image src="../../images/Sdescription/shuoming1.jpg" lazy-load='true' class='comment-img' mode="scaleToFill"></image>
+            <image src="../../images/Sdescription/shuoming1.jpg" lazy-load='true' class='comment-img'></image>
+            <image src="../../images/Sdescription/shuoming1.jpg" lazy-load='true' class='comment-img'></image>
+            <image src="../../images/Sdescription/shuoming1.jpg" lazy-load='true' class='comment-img'></image>
           </view>
     <!-- 结束上传图片 -->
     <view class="user_inctont">
@@ -176,7 +175,7 @@
 <view class="Service_case">
   <view class="service_item">
     <view class="service_img">
-      <image src="../../images/index/dibu1.jpg"></image>
+      <image src="cloud://yuan-p9q0n.7975-yuan-p9q0n/index/dibu1.jpg"></image>
     </view>
     <view class="service_text">
       <text>虹色小区住户电路维修</text>
@@ -184,7 +183,7 @@
   </view>
   <view class="service_item">
     <view class="service_img">
-      <image src="../../images/index/dibu2.jpg"></image>
+      <image src="cloud://yuan-p9q0n.7975-yuan-p9q0n/index/dibu2.jpg"></image>
     </view>
     <view class="service_text">
       <text>富豪小区窗户维修保养</text>
@@ -192,7 +191,7 @@
   </view>
   <view class="service_item">
     <view class="service_img">
-      <image src="../../images/index/dibu3.jpg"></image>
+      <image src="cloud://yuan-p9q0n.7975-yuan-p9q0n/index/dibu3.jpg"></image>
     </view>
     <view class="service_text">
       <text>美景区住户冰箱不制冷</text>
@@ -200,7 +199,7 @@
   </view>
   <view class="service_item">
     <view class="service_img">
-      <image src="../../images/index/dibu4.jpg"></image>
+      <image src="cloud://yuan-p9q0n.7975-yuan-p9q0n/index/dibu4.jpg"></image>
     </view>
     <view class="service_text">
       <text>电视闪屏到店维修</text>

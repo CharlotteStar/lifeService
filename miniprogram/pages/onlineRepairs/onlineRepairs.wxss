@@ -11,7 +11,7 @@
 .content_tab .orderInfo .orderInfo-item{width:100%;height: 360rpx;}
 .content_tab .orderInfo .orderInfo-item .crderconter{width:92%;margin: 0 auto;}
 .content_tab .orderInfo .orderInfo-item .crderconter .crder_img{margin: 0 auto;margin-top: 30rpx;}
-.content_tab .orderInfo .orderInfo-item .crderconter .crder_img image{height: 290rpx;border-radius: 10rpx;width: 100%;}
+.content_tab .orderInfo .orderInfo-item .crderconter .crder_img image{height: 300rpx;border-radius: 10rpx;width: 100%;}
 .orderInfo .orderInfo-item .crderconter .crder_text{font-size: 32rpx;overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;

@@ -8,9 +8,9 @@ Page({
    */
   data: {
     "bnrUrl": [{
-      "url": "../../images/index/lunbotu1.jpg"
+      "url": "cloud://yuan-p9q0n.7975-yuan-p9q0n/index/lunbotu1.jpg"
     }, {
-        "url": "../../images/index/lunbotu2.jpg"
+        "url": "cloud://yuan-p9q0n.7975-yuan-p9q0n/index/lunbotu2.jpg"
     }],
     currentSwiper: 0,
     autoplay: true,

@@ -75,3 +75,9 @@ opacity:1;
 .Service_case .service_item{width:45%;margin-top: 30rpx;}
 .Service_case .service_item image{width:100%;height:  200rpx;border-radius: 10rpx;}
 .Service_case .service_item .service_text{font-size: 30rpx;}
+.comment-img{  /*修饰图片*/
+   width:200rpx;
+   height: 200rpx;
+   margin-right: 20rpx;
+   margin-top: 10rpx;
+ }
