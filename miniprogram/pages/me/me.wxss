@@ -69,7 +69,7 @@
     top: 0;
     bottom: 0;
     margin: auto 0;
-    background: no-repeat -588px -192px;
+    background: url(/images/icon/mbg01.png?v=201908141252) no-repeat -588px -192px;
 }
 .user-detail .order-status-wrap {
     margin: 15px 0 10px;
@@ -82,13 +82,12 @@
     position: relative;
     cursor: pointer;
 }
-
 .user-detail .status-icon {
   width: 25px;
   height: 25px;
   display: block;
   margin: 0 auto 4px;
-  background-repeat: no-repeat;
+  background: url(/images/icon/mbg01.png?v=201908141252) no-repeat;
   background-color: rgb(86, 187, 55);
 }
 .user-detail .wait-pay {
@@ -141,7 +140,7 @@
     height: 100%;
     margin-right: 10px;
     float: left;
-    background:0 -868px no-repeat;
+    background: url(/images/icon/defaultIcon.png?v=201906051302) 0 -868px no-repeat;
 }
 .user-detail .service-name {
     margin-top: 10px;
@@ -168,14 +167,14 @@
     color: #888;
     cursor: pointer;
 }
-.user-detail .view-more .before {
+.user-detail .view-more:before {
     content: '';
     width: 11px;
     height: 7px;
     margin-right: 10px;
     display: inline-block;
     vertical-align: middle;
-    background-repeat: no-repeat;
+    background: url(/images/icon/mbg01.png?v=201908141252) no-repeat;
     background-position: -1203px 0;
 }
 
@@ -196,7 +195,7 @@
     width: 16px;
     height: 16px;
     margin-top: 2px;
-    background-repeat: no-repeat;
+    background: url(/images/icon/mbg01.png?v=201908141252) no-repeat;
     flex-shrink: 0;
 }
 .user-detail .address-icon {
@@ -231,11 +230,6 @@
     height: 12px;
     background: red;
     flex-shrink: 0;
-    background:no-repeat -588px -192px ;
+    background: url(/images/icon/mbg01.png?v=201908141252) no-repeat -588px -192px;
     margin-top: 4px;
 }
-
-
-
-@import '/style/defaultIcon.wxss';
-@import '/style/mbg01.wxss';

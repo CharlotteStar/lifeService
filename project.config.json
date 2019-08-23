@@ -43,7 +43,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 4,
 			"list": [
 				{
 					"id": -1,
@@ -69,7 +69,14 @@
 					"id": -1,
 					"name": "添加员工",
 					"pathName": "pages/addBusCard/addBusCard",
+					"query": "",
 					"scene": 1006
+				},
+				{
+					"id": -1,
+					"name": "服务详情",
+					"pathName": "pages/msgBoard/msgBoard",
+					"scene": null
 				}
 			]
 		}

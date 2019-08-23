@@ -146,12 +146,10 @@
     <view class="user_inctont">
       <text class="textred">*</text>
       <text class="text_contacts">上传图片：</text>
-    </view>
+    </view> 
     <view>
-      <van-cell-group custom-style="phonebg">
-    
+      <van-cell-group custom-style="phonebg"> 
           <van-button slot="button" size="small" type="primary" bindtap="tianjia">点击上传</van-button>
-     
       </van-cell-group>
     </view>
       <!-- 照片展示 -->

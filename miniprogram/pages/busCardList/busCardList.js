@@ -36,6 +36,7 @@ Component({
       this.setData({
         empData
       });
+      console.log(this.data.empData)
     });
 
   }

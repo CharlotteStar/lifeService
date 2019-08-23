@@ -1,7 +1,39 @@
 /* pages/msgBoard/msgBoard.wxss */
 page{background-color: #FFFFFF;}
-.index_content{width:100%;position: relative;
-  line-height: 10rpx;/* 可以改变swiper上小圆点的位置 */
+.crderconter{width:92%;margin: 0 auto;margin-bottom: 20rpx;}
+.crderconter .crder_img{margin: 0 auto;margin-top: 30rpx;}
+.crderconter .crder_img image{height: 290rpx;border-radius: 10rpx;width: 100%;}
+.crderconter .crder_text{font-size: 32rpx;overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1; /*第三行显示 ...*/
+        -webkit-box-orient: vertical;}
+.crderconter .crder_subtext{font-size: 24rpx;color:#888;word-wrap: break-word;overflow: hidden;text-overflow: ellipsis; display: -webkit-box;
+        -webkit-line-clamp: 1; /*第三行显示 ...*/
+        -webkit-box-orient: vertical;margin-top: 10rpx;}
+.crderconter .crder_view{display: flex;margin-top:10rpx;position: relative;font-size: 32rpx;color:#989898;vertical-align: middle;}
+.crderconter .crder_view .crder_viewpicse{color:rgb(86, 187, 55);}
+.crderconter .crder_view .crder_viewsubp{font-size: 24rpx;text-decoration:line-through;margin-right: 20rpx;}
+.crderconter .crder_view .crder_yuyue{font-size: 26rpx;}
+.crderconter .crder_view .crder_msg{color:rgb(86, 187, 55);margin-right: 15rpx;}
+.crderconter .crder_view .crder_mianfei{color:rgb(86, 187, 55);margin-right: 15rpx;}
+/* 横线 */
+.tabNavhengxian{width:100%;height: 20rpx;background: #F0F0F0;}
+
+.ser_particulars{width:100%;}
+.ser_title{width: 95%;display: flex;font-size: 32rpx;align-items: center;border-bottom: 1px solid#eee;padding-bottom: 15rpx;margin: 0 auto;padding-top: 15rpx;}
+.ser_title view:nth-child(1){width:5rpx;height: 20rpx;background-color: #353535;margin-right: 20rpx;}
+.ser_particulars .ser_content{
+   padding-left:30rpx;padding-right: 30rpx;
 }
-.hengxian{width: 100%;height: 20rpx;background:#F0F0F0;}
-.index_content image{width:100%;height: inherit;}
+.ser_items{width: 100%;font-size: 32rpx;margin-top: 30rpx;}
+.ser_imgs{width: 80%;margin: 0 auto;overflow: hidden;height: 350rpx;margin-top: 10rpx;}
+.ser_imgs image{width: 100%;height: 100%;}
+/* 底部导航条 */
+.msg_dibu{width:100%;height: 100rpx;background: white;position: fixed;bottom: 0;display:flex;}
+.msg_dibu view:nth-child(1){width:10%;text-align: center;font-size: 32rpx;position: relative;left: 20rpx;}
+.msg_dibu .msgg_img .msugl{width: 50rpx;height: 50rpx;}
+.msg_dibu view:nth-child(2){width:80%;}
+.msg_dibu view:nth-child(2) button{width:82%;margin: 0 auto;background-color:rgb(86, 187, 55);height: 80rpx;border-radius: 50rpx;position: absolute;top:50%;right:20rpx;transform: translateY(-50%);line-height: 80rpx;color:white;font-size:32rpx;}
+
+
