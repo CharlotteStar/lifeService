@@ -14,7 +14,11 @@ Page({
     }],
     currentSwiper: 0,
     autoplay: true,
+<<<<<<< HEAD
     radio: '',  //选  中的服务
+=======
+    radio: '',  //选中的服务
+>>>>>>> 535fab4b16de451db335d4b6919ba3ab6dfbee98
     sms:'',    //
     makeimg:''    //保修预约的图片
   },

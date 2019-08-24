@@ -5,10 +5,17 @@ Page({
    * 页面的初始数据
    */
   data: {
+<<<<<<< HEAD
     "bnrUrl": [{  //轮播 图
       "url": "../../images/Sdescription/shuoming1.jpg"
     }, {
         "url": "../../images/Sdescription/shuoming1.jpg"
+=======
+    "bnrUrl": [{  //轮播图
+      "url": "../../images/Sdescription/shuoming1.jpg"
+    }, {
+      "url": "../../images/index/lunbotu2.jpg"
+>>>>>>> 535fab4b16de451db335d4b6919ba3ab6dfbee98
     }],
     navTab: ['上门维修', '到店维修'],
     currentTab: 0,  //切换tab内容
