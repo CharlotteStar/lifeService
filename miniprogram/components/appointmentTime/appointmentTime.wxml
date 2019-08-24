@@ -41,7 +41,6 @@
       <view class="datePicker-top">
         <view class="preMonth"></view>
         <view class="nextMonth"></view>
-
         <view class="selectYearMonth">
           <picker class="selectYearMonth-item" bindchange="yearPickerChange" value="{{yearIndex}}" range="{{yearArray}}">
             <view class="picker">
@@ -55,11 +54,14 @@
           </picker>
         </view>
       </view>
+
       <view class="calendar">
           <view class="weekList">
             <view wx:for="{{weekArray}}" wx:key="index">{{item}}</view>
           </view>
-          <view class="dateList"></view>
+          <view class="dateList">
+            <view wx:for="{{37}}">{{index}}</view>
+          </view>
         </view>
     </view>
   </view>

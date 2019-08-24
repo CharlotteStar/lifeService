@@ -79,12 +79,11 @@
   display: none;
 }
 
-.date-container {
-  padding-top: 32rpx;
-  display: none;
+.datePicker-container {
   font-size: 28rpx;
   border: 1px solid #e3e2e8;
   clear: both;
+  margin-right:20rpx;
 }
 
 .datePicker-top {
@@ -102,12 +101,13 @@
 }
 
 .selectYearMonth-item {
-  padding: 10rpx 20rpx;
   border: 1px solid #e3e2e8;
   border-radius: 2px;
-  appearance: none;
   color: #333;
   margin: 0 10rpx;
+}
+.selectYearMonth-item  input{
+  height:40rpx;
 }
 
 .datePicker-top .preMonth, .datePicker-top .nextMonth {
@@ -134,10 +134,17 @@
 }
 
 .weekList{
-  display:flex;
-  justify-content: space-around
-}
-.weekList view{
-  padding:20rpx;
   font-size:32rpx;
 }
+.dateList,
+.weekList{
+  display:flex;
+  flex-wrap: wrap
+}
+.dateList view,
+.weekList view{
+  width:52rpx;
+  padding:15rpx;
+ text-align: center;
+}
+
