@@ -1,2 +1,82 @@
 <!--pages/msgBoard/msgBoard.wxml-->
-<text>pages/msgBoard/msgBoard.wxml</text>
+<!-- 详情页 -->
+<!-- 开始服务一 -->
+<view class="crderconter">
+  <navigator url="/pages/msgBoard/msgBoard" hover-class="navigator-hover">
+    <view class="crder_img">
+      <swiper autoplay='true' interval='5000' duration='1000' circular='true'>
+        <block wx:for="{{bnrUrl}}" wx:key="key" wx:for-index="index">
+          <swiper-item>
+            <image src='{{item.url}}' class='u-img-slide' mode='aspectFill'></image>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view class="crder_text">手机电子维修，更换屏幕等手机电子维修</view>
+    <view class="crder_subtext">专业工程师现场检测您的设备，并采取现场面对面的透明化维修模式，让您的设备不用返厂</view>
+    <view class="crder_view">
+      <!--判断后台传数据1是默认，2是面议 3是免费   wx-if=""-->
+      <view>
+        <text class="crder_viewpicse">￥180</text>
+        <text class="crder_viewsubp">￥210</text>
+      </view>
+      <view class="crder_msg">面议</view>
+      <view class="crder_mianfei" wx-if="">免费</view>
+      <view class="crder_yuyue">已预约：10</view>
+    </view>
+  </navigator>
+</view>
+<!-- 结束服务一 -->
+<!-- 横线 -->
+<view class="tabNavhengxian"></view>
+<!-- 结束横线 -->
+<view class="ser_particulars">
+  <view class="ser_title">
+    <view></view>
+    <view>服务详情</view>
+  </view>
+  <!-- 服务明细 -->
+  <view class="ser_content">
+    <view class="ser_items">
+      <van-tag round type="success" size="medium">1</van-tag>
+      首先要防止雨水从穿墙孔向室内倒灌。在空调安装过程中，必须打一个室内稍高一些的穿墙孔。安装完成后，穿墙孔的空隙必须用油灰堵好，如果是使用楼道内的排水孔，也要注意类似的问题。
+      <view class="ser_imgs">
+        <image src="../../images/online/kt1.jpg" mode="aspectFit"></image>
+      </view>
+    </view>
+     <!-- 开始第二步 -->
+        <view class="ser_items">
+      <van-tag round type="success" size="medium">2</van-tag>
+      在空调安装过程中防止氟里昂泄漏。空调安装完毕后，一定要让安装人员对空调连接口进行检漏，以防氟里昂泄漏。
+      <view class="ser_imgs">
+        <image src="../../images/online/kt2.png" mode="aspectFit"></image>
+      </view>
+    </view>
+     <!-- 结束第二步 -->
+      <!-- 开始第三步 -->
+        <view class="ser_items">
+      <van-tag round type="success" size="medium">3</van-tag>
+     防止室外漏水。空调在冬季制热时，会因化霜而有水滴出。所以安装空调时要特别注意室外机出水嘴和出水管。
+      <view class="ser_imgs">
+        <image src="../../images/online/kt3.jpg" mode="aspectFit"></image>
+      </view>
+    </view>
+     <!-- 结束第三步 -->
+      <!-- 开始第四步 -->
+        <view class="ser_items">
+      <van-tag round type="success" size="medium">4</van-tag>
+    防止室内漏水。要保证空调制冷时产生的冷凝水能够排到室外，安装时可以在空调器的接水盘中倒入一点水，检查一下是否能排到室外。
+      <view class="ser_imgs">
+        <image src="../../images/online/kt4.jpg" mode="aspectFit"></image>
+      </view>
+    </view>
+     <!-- 结束第四步 -->
+  </view>
+</view>
+<!-- 底部导航栏 -->
+<view class="msg_dibu">
+  <view class="msgg_img">
+   <image src="../../images/icon/dianhua.png" class="msugl"></image>
+  电话</view>
+  <view><button class="msg_btn">立即预约</button></view>
+</view>

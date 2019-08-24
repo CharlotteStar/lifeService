@@ -7,13 +7,25 @@
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"checkSiteMap": false
+		"coverView": true,
+		"nodeModules": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": false,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"enhance": true
 	},
 	"appid": "wx87003258d57a004b",
 	"projectname": "lifeService",
 	"libVersion": "2.2.5",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
+	"compileType": "miniprogram",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -31,12 +43,40 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 4,
 			"list": [
 				{
 					"id": -1,
 					"name": "db guide",
-					"pathName": "pages/databaseGuide/databaseGuide"
+					"pathName": "pages/databaseGuide/databaseGuide",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "服务说明",
+					"pathName": "pages/serviceDesc/serviceDesc",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "添加员工",
+					"pathName": "pages/home/home",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "添加员工",
+					"pathName": "pages/addBusCard/addBusCard",
+					"query": "",
+					"scene": 1006
+				},
+				{
+					"id": -1,
+					"name": "服务详情",
+					"pathName": "pages/msgBoard/msgBoard",
+					"scene": null
 				}
 			]
 		}

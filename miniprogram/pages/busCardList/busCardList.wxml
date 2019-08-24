@@ -1,2 +1,15 @@
-<!--pages/busCardList/busCardList.wxml-->
-<text>pages/busCardList/busCardList.wxml</text>
+
+<view class="cardList-module">
+  <view class="module_bg"></view>
+  <view class="small-box-list">
+    <view class="item-box J_data" wx:for="{{empData}}" wx:key="index" bindtap="toEmpDetail" data-id="{{item._id}}">
+      <image class="img-wrapper stretch bd-show" src="{{item.avatar}}" mode="aspectFill"></image>
+      <view class="info">
+        <view class="name ellipsis">{{item.name}}</view>
+        <view class="job ellipsis">{{item.post}}</view>
+      </view>
+      <image src="/images/icon/call.png" mode="widthFix" class="icon-phone"></image>
+    </view>
+  </view>
+  
+</view>

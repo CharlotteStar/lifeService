@@ -8,11 +8,33 @@ Page({
 
   },
 
+  getUserInfo(){
+    wx.getUserInfo({
+      success(res){
+        console.log(res.userInfo);
+        wx.setStorage({
+          key: 'userInfo',
+          data: res.userInfo,
+        })
+      }
+    })
+  },
+  login(){
+    // 可以通过 wx.getSetting 先查询一下用户是否授权了 "scope.record" 这个 scope
+    wx.getSetting({
+      success(res) {
+        console.log(res.authSetting['scope.userInfo']);
+        if (!res.authSetting['scope.userInfo']) {
+          
+        }
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
   },
 
   /**

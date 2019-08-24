@@ -16,5 +16,8 @@ App({
     }
 
     this.globalData = {}
+  },
+  onShow: function () {
+    wx.hideTabBar()
   }
 })

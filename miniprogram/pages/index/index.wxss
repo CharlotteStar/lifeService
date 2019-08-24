@@ -1,1 +1,83 @@
 /* pages/index/index.wxss */
+page{background-color: #FFFFFF;}
+.index_content{width:100%;position: relative;
+  line-height: 10rpx;/* 可以改变swiper上小圆点的位置 */
+}
+/*用来包裹所有的小圆点 */
+.dots{
+width: 400rpx;
+height: 36rpx;
+margin-top: 50rpx;
+position: absolute;
+bottom:0;
+right: 0;
+}
+/*未选中时的小圆点样式 */
+.dot{
+width: 8rpx;
+height: 8rpx;
+border-radius: 50%;
+margin-right: 26rpx;
+background-color: #1F1202;
+opacity:0.3;
+float: left;
+}
+
+/*选中以后的小圆点样式 */
+
+.active{
+
+width: 24rpx;
+
+height: 8rpx;
+
+border-radius: 4rpx;
+
+background-color: #1F1202;
+
+opacity:1;
+
+}
+.index_content image{width:100%;height: inherit;}
+.cint_twe{position: absolute;z-index: 2;width: 100%;text-align: center;}
+.index_title{text-align: center;margin-top:20rpx;font-size: 40rpx;}
+.hengxian{width:50rpx;height: 2rpx;background:#77D1AE;margin: 20rpx auto; }
+.server{width: 100%;display: flex;flex-flow: wrap;justify-content: space-around;background-color:  #FFFFFF;}
+.server .content_serve{width:28%;height:180rpx;text-align: center;border:1px solid #C1C1C1;font-size: 26rpx;margin-top: 20rpx;padding-top: 15rpx;position: relative;}
+.server .content_serve image{width: 100%;height: 150rpx;border:0;outline: 0;margin-top: 10rpx;}
+.index_bg{width:100%;height:800rpx;position: relative;text-align: center;}
+.index_bg .index_timfont{width: 100%;box-sizing: border-box;padding: 15rpx;position: absolute;top:140rpx;font-size: 24rpx;color: rgb(102, 102, 102);height: 300rpx;}
+.index_bg .index_img{width:100%;z-index: -1;height:inherit;position: relative;}
+.indw_title{position: absolute;top:60rpx;left:50%;transform: translateX(-50%);font-size: 40rpx;}
+.index_bg .index_titlefont{width:100%;height: 200rpx;display: flex;justify-content: space-around;position: absolute;bottom: -50rpx;overflow: hidden;}
+.index_bg .index_titlefont .indw_font{width: 20%;}
+.index_bg .index_titlefont .indw_font .font_one{font-size:50rpx;color: white;font-weight: bolder;}
+.index_bg .index_titlefont .indw_font .font_two{font-size: 25rpx;color: white;}
+.appointment_kt{width:100%;margin-top: 20rpx;border-bottom: 1rpx solid #d9d9d9;padding-bottom: 25rpx;}
+.appointment_kt .tment_kt{width:50%;display: flex;justify-content:center;align-items:center;margin: 0 auto;margin-top: 20rpx;}
+.appointment_kt .tment_kt .tehengxian{width:20rpx;height: 2rpx;background-color: #d9d9d9;}
+.appointment_kt .tment_kt .tehencolor{color: #353535;font-size: 32rpx;margin-left:20rpx;margin-right:20rpx;}
+.appointment_kt .usermsg{padding: 0 25rpx 0 25rpx;}
+.usermsg .user_inctont{height: 50rpx;line-height: 50rpx;margin-bottom: 10rpx;margin-top: 10rpx;}
+.appointment_kt .usermsg .textred{color:red;vertical-align: -5rpx;}
+.appointment_kt .usermsg .text_contacts{font-size: 28rpx;}
+.appointment_kt .usermsg .user_uame{background-color: #f7f7f7;height: 50rpx;line-height: 50rpx;width: 100%;padding-top: 20rpx;padding-bottom: 20rpx;padding-left: 15rpx;}
+.user_morenname{font-size: 30rpx;}
+.serverradio{display: flex;width: 100%;flex-flow:wrap;}
+.radioone{font-size: 30rpx;margin-right: 20rpx;margin-bottom: 15rpx;}
+.textarea-wrp {
+  padding: 0 25rpx;
+  background-color: #f7f7f7;
+  font-size: 30rpx;
+  margin-bottom: 30rpx;
+}
+.Service_case{width: 100%;display: flex;justify-content: space-around;flex-flow: wrap;}
+.Service_case .service_item{width:45%;margin-top: 30rpx;}
+.Service_case .service_item image{width:100%;height:  200rpx;border-radius: 10rpx;}
+.Service_case .service_item .service_text{font-size: 30rpx;}
+.comment-img{  /*修饰图片*/
+   width:200rpx;
+   height: 200rpx;
+   margin-right: 20rpx;
+   margin-top: 10rpx;
+ }

@@ -1,0 +1,47 @@
+
+<view class="service-editor business-card-wrapper">
+  <view class="jz_scrollbar scroll-container service-main-footer">
+    <view class="jz_scrollbar__wrap">
+      <view class="jz_scrollbar__view">
+        <view class="business-card">
+          <view class="card-bg"></view>
+          <view class="card-intro">
+            <view class="intro-content">
+              <view class="firm-name ellipsis">暂无公司名称</view>
+              <view class="name ellipsis">黄师傅</view>
+              <view class="job ellipsis">水电</view>
+              <image class="head-icon"></image>
+            </view>
+            <view class="intro-footer">
+              <text>我的名片</text>
+              <view class="qr-code"></view>
+            </view>
+          </view>
+          <view class="card-content">
+            <view class="card-nav">
+              <view class="nav-item connect active">联系我</view>
+              <view class="nav-item about">关于我</view>
+            </view>
+            <view class="connect-content">
+              <view class="connect-item phone">13729412134</view>
+              <view class="connect-item ellipsis email">973165084@qq.com</view>
+              <view class="connect-item ellipsis address">广州越秀区</view>
+              <view class="connect-item ellipsis wechatId">yuan973165084</view>
+            </view>
+            <view class="about-content">
+              <view style="line-height:1.5em;">哈哈哈</view>
+            </view>
+          </view>
+          <view class="footer-area footer-logo">点击制作我的名片</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="service-footer">
+    <view class="card-footer">
+      <view class="footer-item iconfont icon-share2 share-btn">分享</view>
+      <view class="footer-item iconfont icon-home2 firm-btn">我的公司</view>
+      <button class="footer-btn">保存到通讯录</button>
+    </view>
+  </view>
+</view>
