@@ -13,7 +13,7 @@ Page({
     serviceType: ['厨卫维修', '家电维修', '电子产品'],
     selectedService: '厨卫维修',
     showServiceType:false,
-    showSetTime: false,
+    showSetTime: true,
   },
 
   selectServiceType(){

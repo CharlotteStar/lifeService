@@ -1,26 +1,143 @@
 /* components/appointmentTime/appointmentTime.wxss */
 
-.checkboxTime{
+.checkboxTime {
   display: block;
-  width:100vw;
+  width: 100vw;
 }
 
-.serviceTime{
-  display:flex;
-  margin:30rpx 0
+.serviceTime {
+  display: flex;
+  margin-top: 30rpx;
 }
-.serviceTime .title{
-  padding:10rpx;
+
+.serviceTime .title {
+  padding: 10rpx;
 }
-.checkbox{
-  display:inline-block;
+
+.checkbox {
+  display: inline-block;
   white-space: nowrap;
-  padding:10rpx 15rpx;
-  position:relative;
+  padding: 10rpx 15rpx;
+  position: relative;
 }
-.addService-radio{
+
+.addService-radio {
+  display: flex;
+}
+
+.addService-radio van-radio {
+  margin: 0 10rpx;
+}
+
+.setTimeInterval {
+  margin-right: 15rpx;
+  flex-grow: 1;
+}
+
+.timeInterval {
+  margin: 20rpx 15rpx 0;
+}
+
+.intervalSelect, .timeInterval-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.intervalOption {
+  padding: 10rpx 18rpx;
+  border: 1px solid #ccc;
+  border-radius: 8rpx;
+}
+
+.intervalOption.selected {
+  border-color: #33f;
+}
+
+.intervalOption+.intervalOption {
+  margin-left: 15rpx;
+}
+
+.timeInterval-content {
+  display: flex;
+  border: 1px solid #ccc;
+  margin-top: 10rpx;
+  border-radius: 8rpx;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.workTimeOption {
+  padding: 15rpx 30rpx;
+}
+
+.workTimeOption.notWorkTime {
+  color: #ccc;
+  text-decoration: line-through;
+}
+
+.d-none {
+  display: none;
+}
+
+.date-container {
+  padding-top: 32rpx;
+  display: none;
+  font-size: 28rpx;
+  border: 1px solid #e3e2e8;
+  clear: both;
+}
+
+.datePicker-top {
+  margin: 20rpx 28rpx;
+  position: relative;
+  background: 0 0;
+  border: none;
+  border-radius: 4px;
+}
+
+.selectYearMonth {
+  display: flex;
+  text-align: center;
+  padding:0 30rpx;
+}
+
+.selectYearMonth-item {
+  padding: 10rpx 20rpx;
+  border: 1px solid #e3e2e8;
+  border-radius: 2px;
+  appearance: none;
+  color: #333;
+  margin: 0 10rpx;
+}
+
+.datePicker-top .preMonth, .datePicker-top .nextMonth {
+  width: 10px;
+  height: 16px;
+  position: absolute;
+  top: 50%;
+  border-radius: 4px;
+  transform: translateY(-50%);
+}
+
+.datePicker-top .preMonth {
+  right: 0;
+  background: url(http://wwwhui.top/images/mgbg2.png) -234px 1px no-repeat;
+}
+
+.datePicker-top .nextMonth {
+  left: 0;
+  background: url(http://wwwhui.top/images/mgbg2.png) -184px 1px no-repeat;
+}
+
+.datePicker-top .nextMonth.disable {
+  background: url(http://wwwhui.top/images/mgbg2.png) -218px 1px no-repeat;
+}
+
+.weekList{
   display:flex;
+  justify-content: space-around
 }
-.addService-radio van-radio{
-  margin:0 10rpx;
+.weekList view{
+  padding:20rpx;
+  font-size:32rpx;
 }

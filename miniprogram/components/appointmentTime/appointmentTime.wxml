@@ -2,25 +2,67 @@
   <text class="title">营业日期：</text>
   <checkbox-group bindchange="checkboxTimeChange">
     <label class="checkbox" wx:for="{{selectServiceWeek}}" wx:key="index">
-      <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+      <checkbox value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
     </label>
   </checkbox-group>
 </view>
 
 <view class="serviceHour serviceTime">
   <text class="title">精确到小时：</text>
-  <van-radio-group value="{{ isServiceHour }}" bind:change="isServiceHourChange" class="addService-radio">
-    <van-radio name="{{true}}" checked-color="#2e2">是</van-radio>
-    <van-radio name="{{false}}" checked-color="#2e2">否</van-radio>
-  </van-radio-group>
+  <view class="setTimeInterval">
+    <van-radio-group value="{{ isServiceHour }}" bind:change="isServiceHourChange" class="addService-radio">
+      <van-radio name="{{true}}" checked-color="#2e2">是</van-radio>
+      <van-radio name="{{false}}" checked-color="#2e2">否</van-radio>
+    </van-radio-group>
+    <view class="timeInterval" class="{{isServiceHour=='true'? '' :'d-none'}}">
+      <view class="timeInterval-top">
+        <text class="title">时间间隔：</text>
+        <view class="intervalSelect" bindtap="selectTimeInterval">
+          <view class="intervalOption {{selectedTimeInterval==1?'selected' : ''}}" data-interval="{{1}}">1小时</view>
+          <view class="intervalOption {{selectedTimeInterval==0.5?'selected' : ''}}" data-interval="{{0.5}}">30分钟</view>
+          <view class="intervalOption {{selectedTimeInterval==0.25?'selected' : ''}}" data-interval="{{0.25}}">15分钟</view>
+        </view>
+      </view>
+      <view class="timeInterval-content">
+        <view class="workTimeOption {{item.isWorkTime?'':'notWorkTime'}}" wx:for="{{workTimeList}}" wx:key="index" bindtap="selectWorkTime" data-index="{{index}}">{{item.value}}</view>
+      </view>
+    </view>
+  </view>
 </view>
 
 <view class="serviceSpecial  serviceTime">
   <text class="title">特殊日期：</text>
-  <van-radio-group value="{{ isSpecial }}" bind:change="isSpecialChange" class="addService-radio">
-    <van-radio name="{{true}}" checked-color="#2e2">开启</van-radio>
-    <van-radio name="{{false}}" checked-color="#2e2">关闭</van-radio>
-  </van-radio-group>
+  <view class="selectWorkDate">
+    <van-radio-group value="{{ isSpecial }}" bind:change="isSpecialChange" class="addService-radio">
+      <van-radio name="{{true}}" checked-color="#2e2">开启</van-radio>
+      <van-radio name="{{false}}" checked-color="#2e2">关闭</van-radio>
+    </van-radio-group>
+    <view class="datePicker-container">
+      <view class="datePicker-top">
+        <view class="preMonth"></view>
+        <view class="nextMonth"></view>
+
+        <view class="selectYearMonth">
+          <picker class="selectYearMonth-item" bindchange="yearPickerChange" value="{{yearIndex}}" range="{{yearArray}}">
+            <view class="picker">
+              <input value="{{yearArray[yearIndex]}}" disabled></input>
+            </view>
+          </picker>
+          <picker class="selectYearMonth-item" bindchange="monthPickerChange" value="{{monthIndex}}" range="{{monthArray}}">
+            <view class="picker">
+              <input value="{{monthArray[monthIndex]}}" disabled></input>
+            </view>
+          </picker>
+        </view>
+      </view>
+      <view class="calendar">
+          <view class="weekList">
+            <view wx:for="{{weekArray}}" wx:key="index">{{item}}</view>
+          </view>
+          <view class="dateList"></view>
+        </view>
+    </view>
+  </view>
 </view>
 
 <view class="serviceDispark serviceTime">
