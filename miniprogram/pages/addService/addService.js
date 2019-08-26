@@ -1,21 +1,81 @@
 // pages/addService/addService.js
+const db = wx.cloud.database({
+  env: "wei-6pifm"
+});
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    name:"",      //名称
+    digest:"",     //摘要
     priceType:'moren',
-    appointment:"on",
-    isAstrict:"off",
+    price:"",
+    promotion:"",
+    isAstrict:"on",
+    isAppoint:"off",
     showImage:[],
     fakeCount:1,
     serviceType: ['厨卫维修', '家电维修', '电子产品'],
     selectedService: '厨卫维修',
     showServiceType:false,
-    showSetTime: true,
+    showSetTime: false,
+    fileIDs:[],
+
+    appoint:{
+      canAppointDate: [25, 26, 27, 28, 29, 30, 31],
+      canAppointTime: ["08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00"],
+      canAppointWeek: ["one", "two", "three", "four", "five", "seven"]
+    },
   },
 
+  saveData() {
+    // this.uploadImages();
+    var data = this.data;
+    // console.log(data.name);
+    // console.log(data.digest);
+    // console.log(data.showImage);
+
+    // console.log(data.selectedService);
+    // console.log(data.fileIDs);
+    // console.log(data.appoint);
+    // console.log(data.price);
+    // console.log(data.fakeCount);
+    var serviceData={
+      name:data.name,
+      digest: data.digest,
+      // images: data.showImage,
+      serviceType: data.selectedService,
+      appoint: data.appoint,
+      price: data.price,
+      fakeCount: data.fakeCount
+    };
+    console.log(serviceData);
+  },
+
+  onNameChange(e){
+    this.setData({ name: e.detail});
+  },
+  onDigestChange(e){
+    this.setData({ digest:e.detail})
+  },
+  getAppointData(e){
+    this.setData({ appoint :e.detail});
+  },
+  
+  add() {
+    this.setData({ fakeCount: ++this.data.fakeCount });
+  },
+  reduce() {
+    this.setData({ fakeCount: --this.data.fakeCount });
+  },
+
+  hideSetTime(){
+    this.setData({ showSetTime: false});
+  },
+  
   selectServiceType(){
     this.setData({ showServiceType: true });
   },
@@ -42,17 +102,23 @@ Page({
 
   },
   onPriceTypeChange(e){
-    this.setData({priceType:e.detail});
-    console.log(this.data.priceType);
+    var priceType = e.detail
+    this.setData({priceType });
+    if (priceType==mianfei){
+      this.setData({ price:0 })
+    }
   },
   onPriceChange(e){
-    
+    this.setData({price:e.detail});
   },
-  onAppointmentChange(e){
-    this.setData({ appointment: e.detail })
+  onPromotionChange(e){
+    this.setData({promotion:e.detail});
   },
-  onIsAstrictChange(e) {
-    this.setData({ isAstrict: e.detail });
+  onAstrictChange(e){
+    this.setData({ isAstrict: e.detail })
+  },
+  onIsAppointChange(e) {
+    this.setData({ isAppoint: e.detail });
   },
   onFakeChange(){
     
@@ -65,6 +131,65 @@ Page({
         var showImage=res.tempFilePaths;
         this.setData({showImage})
       }
+    })
+  },
+  uploadImages() {
+    /////将图片上传到云存储/////
+    var images = this.data.showImage;
+    var promiseArr = [];
+    for (var i = 0; i < images.length; i++) {
+      //创建promise对象
+      promiseArr.push(
+        new Promise((reslove, reject) => {
+          //获取当前图片
+          var item = images[i];
+          //创建正则表达式拆分文件后缀名
+          var suffix = /.(jpg|png)$/.exec(item)[0]; //截取后缀名 
+          var newFile = new Date().getTime() + Math.random().toString(32).substr(2, 6) + suffix; //拼接新的路径 
+          //上传图片并且将fileID保存数组
+          wx.cloud.uploadFile({
+            cloudPath: newFile, //新文件名
+            filePath: item, //选中文件
+            success: res => { //上传成功
+              var fid = res.fileID;
+              var ids = this.data.fileIDs.concat(fid);
+              this.setData({
+                fileIDs: ids
+              });
+              reslove();
+            },
+            fail: err => {
+              console.log(err);
+            }
+          })
+          //将当前promise任务追加任务列表中
+          //上传失败输出错误消息
+        })
+      )
+    };
+    ///////将图片保存数据库/////////
+    Promise.all(promiseArr).then(res => {
+      console.log(this.data.fileIDs);
+      // db.collection("comment").add({
+      //   data: {
+      //     content: this.data.value, //评论内容
+      //     score: this.data.score, //评论分数
+      //     movieid: this.data.movieId, //电影id
+      //     fileIds: this.data.fileIDs //图片
+      //   }
+      // }).then(res => {
+      //   console.log(res);
+      //   wx.hideLoading();
+      //   wx.showToast({
+      //     title: "发表成功"
+      //   })
+      // }).catch(err => {
+      //   console.log(err);
+      //   wx.hideLoading();
+      //   wx.showToast({
+      //     title: "发表失败"
+      //   })
+      // })
     })
   },
   /**

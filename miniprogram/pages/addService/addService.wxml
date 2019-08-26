@@ -105,34 +105,38 @@
     元
   </van-cell-group>
 
-   <van-cell-group class="addService-item">
-    <text>价格类型：</text>
-    <van-radio-group value="{{ appointment }}" bind:change="onAppointmentChange" class="addService-radio">
+
+  <van-cell-group class="addService-item">
+    <text>预约时间：</text>
+    <van-radio-group value="{{ isAppoint }}" bind:change="onIsAppointChange" class="addService-radio">
+      <van-radio name="on" checked-color="#2e2">是</van-radio>
+      <van-radio name="off" checked-color="#2e2">否</van-radio>
+    </van-radio-group>
+    <text bindtap="setAppointmentTime" style="color:#23e" class="{{isAppoint=='on'?'':'d-none'}}">时间设置</text>
+    <van-popup
+      show="{{ showSetTime }}"
+      position="top"
+      bind:close="setTimeClose"
+    >
+      <appointment-time bindhideSetTime="hideSetTime" bindconfirm="getAppointData"></appointment-time>
+    </van-popup>
+  </van-cell-group>
+
+  <van-cell-group class="addService-item">
+    <text>限制预约量：</text>
+    <van-radio-group value="{{ isAstrict }}" bind:change="onAstrictChange" class="addService-radio">
       <van-radio name="on" checked-color="#2e2">开启</van-radio>
       <van-radio name="off" checked-color="#2e2">关闭</van-radio>
     </van-radio-group>
   </van-cell-group>
 
   <van-cell-group class="addService-item">
-    <text>限制预约量：</text>
-    <van-radio-group value="{{ isAstrict }}" bind:change="onIsAstrictChange" class="addService-radio">
-      <van-radio name="on" checked-color="#2e2">是</van-radio>
-      <van-radio name="off" checked-color="#2e2">否</van-radio>
-    </van-radio-group>
-    <text bindtap="setAppointmentTime" style="color:#23e" class="{{isAstrict=='on'?'':'d-none'}}">时间设置</text>
-    <van-popup
-      show="{{ showSetTime }}"
-      position="top"
-      bind:close="setTimeClose"
-    >
-      <appointment-time></appointment-time>
-    </van-popup>
-  </van-cell-group>
-
-  <van-cell-group class="addService-item">
     <text>虚拟订单量：</text>
-    <input-number value="{{fakeCount}}" maxlength="100"></input-number>
+    <input-number value="{{fakeCount}}" maxlength="100" bindadd="add" bindreduce="reduce"></input-number>
   </van-cell-group>
 
-  
+  <view class="saveData">
+    <button class="confirmSave" type="primary" bindtap="saveData">保存</button>
+    <button class="cancelSave" type="default">取消</button>
+  </view>
 </view>

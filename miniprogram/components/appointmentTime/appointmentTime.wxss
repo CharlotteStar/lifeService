@@ -84,6 +84,7 @@
   border: 1px solid #e3e2e8;
   clear: both;
   margin-right:20rpx;
+  margin-top:20rpx;
 }
 
 .datePicker-top {
@@ -119,17 +120,17 @@
   transform: translateY(-50%);
 }
 
-.datePicker-top .preMonth {
+.datePicker-top .nextMonth {
   right: 0;
   background: url(http://wwwhui.top/images/mgbg2.png) -234px 1px no-repeat;
 }
 
-.datePicker-top .nextMonth {
+.datePicker-top .preMonth {
   left: 0;
   background: url(http://wwwhui.top/images/mgbg2.png) -184px 1px no-repeat;
 }
 
-.datePicker-top .nextMonth.disable {
+.datePicker-top .preMonth.disable {
   background: url(http://wwwhui.top/images/mgbg2.png) -218px 1px no-repeat;
 }
 
@@ -141,6 +142,11 @@
   display:flex;
   flex-wrap: wrap
 }
+.dateList .notworkDate{
+  text-decoration: line-through;
+  color:#ccc;
+}
+
 .dateList view,
 .weekList view{
   width:52rpx;

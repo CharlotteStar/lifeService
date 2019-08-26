@@ -37,10 +37,10 @@
       <van-radio name="{{true}}" checked-color="#2e2">开启</van-radio>
       <van-radio name="{{false}}" checked-color="#2e2">关闭</van-radio>
     </van-radio-group>
-    <view class="datePicker-container">
+    <view class="datePicker-container {{isSpecial=='true' ? '' : 'd-none'}}" >
       <view class="datePicker-top">
-        <view class="preMonth"></view>
-        <view class="nextMonth"></view>
+        <view class="preMonth {{yearIndex==0&&monthIndex==0?'disable':''}}" bindtap="preMonth"></view>
+        <view class="nextMonth" bindtap="nextMonth"></view>
         <view class="selectYearMonth">
           <picker class="selectYearMonth-item" bindchange="yearPickerChange" value="{{yearIndex}}" range="{{yearArray}}">
             <view class="picker">
@@ -60,7 +60,8 @@
             <view wx:for="{{weekArray}}" wx:key="index">{{item}}</view>
           </view>
           <view class="dateList">
-            <view wx:for="{{37}}">{{index}}</view>
+            <view wx:for="{{selectedWeek >0 ? selectedWeek : 6}}" wx:key="index"></view>
+            <view class="{{ item.isWorkDate ?'':'notworkDate'}}" wx:for="{{dateArray}}" wx:key="index" bindtap="selectWorkDate" data-index="{{index}}">{{item.value}}</view>
           </view>
         </view>
     </view>
@@ -69,8 +70,16 @@
 
 <view class="serviceDispark serviceTime">
   <text class="title">开放档期：</text>
-  <van-radio-group value="{{ isDispark }}" bind:change="isDisparkChange" class="addService-radio">
-    <van-radio name="{{true}}" checked-color="#2e2">开启</van-radio>
-    <van-radio name="{{false}}" checked-color="#2e2">关闭</van-radio>
-  </van-radio-group>
+  <view>
+    <van-radio-group value="{{ isDispark }}" bind:change="isDisparkChange" class="addService-radio">
+      <van-radio name="{{true}}" checked-color="#2e2">开启</van-radio>
+      <van-radio name="{{false}}" checked-color="#2e2">关闭</van-radio>
+    </van-radio-group>
+    <input-number style="margin:20rpx 0;display:{{isDispark=='true' ? 'block' : 'none'}}" value="{{disparkDate}}"></input-number>
+  </view>
+</view>
+
+<view style="display:flex;padding:20rpx 30rpx">
+  <button type="primary" style="width:150rpx;font-size:28rpx" bindtap="confirmDate">确认</button>
+  <button  style="width:150rpx;font-size:28rpx;background:#ccc" bindtap="hideSetTime">取消</button>
 </view>

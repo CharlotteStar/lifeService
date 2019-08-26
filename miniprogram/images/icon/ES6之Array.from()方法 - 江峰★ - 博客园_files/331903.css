@@ -1,0 +1,109 @@
+body{
+  background-image:none; 
+  background-color:#eee; 
+}
+#header{
+  background-image:none;
+  height:5px;
+  display:none;
+}
+
+#blogTitle{
+  background-image:none;
+}
+#mainContent{
+  float:right;
+  margin: 0 0 0 -250px;
+}
+#navigator{
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100%;
+  background-image:none;
+  background-color:#000;
+  box-shadow: 2px 2px 3px #ccc;
+  padding:8px 15px;
+  z-index: 999;
+}
+#navList{
+  height:56px;
+  margin-top:-8px;
+  margin-left:40px
+}
+#navList li a{
+  height:56px;
+  line-height:56px;
+  color:white
+}
+#mainContent .forFlow{
+     background-image:none;
+     background-color:#eee;
+      margin: 38px 0 0 250px;
+}
+#sideBar{
+  float:left;
+  margin-top:60px;
+}
+.topicListFooter{
+  text-align:center;
+  margin-left: 10px;
+}
+.pager{
+  text-align:center;
+}
+.day{
+  padding:10px 15px;
+  background-color:#fff;
+  background-image:none;
+  border-radius:4px;
+  box-shadow: 2px 2px 3px #ccc;
+}
+
+.CalDayHeader,.CalTodayDay{
+  background-image:none;
+  background-color: #AA7A53;
+}
+.CalWeekendDay{
+  background-color:#fff
+}
+.CalOtherMonthDay{
+  color:darkgray;
+}
+.catListTitle{
+  background-image:none;
+}
+#topics{
+  width:98%;
+}
+.post{
+  background-color:#fff;
+  box-shadow: 2px 2px 3px #ccc;
+}
+#footer{
+  background-image:none;
+}
+#ad_t2,#cnblogs_c1,#under_post_news,#cnblogs_c2,#under_post_kb{
+  display:none;
+}
+.entrylistItem{
+    background-color: #fff;
+    padding: 5px;
+    box-shadow: 2px 2px 3px #ccc;
+}
+.entrylistPosttitle a:hover{
+  color:#AA7A53
+}
+@media screen and (max-width:960px){
+  #mainContent, #mainContent .forFlow{
+     margin-left:0;
+   }
+   #home,#main{
+      min-width:0
+   }  
+@media screen and (max-width:760px){
+   #navList li:nth-child(3){
+        display:none
+   }
+ }
+}

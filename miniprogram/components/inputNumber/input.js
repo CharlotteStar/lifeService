@@ -10,7 +10,7 @@ Component({
     },
     value:{
       type:Number,
-      value:1
+      value:10
     }
   },
 
@@ -26,10 +26,12 @@ Component({
    */
   methods: {
     add(){
-      this.setData({ value: ++this.data.value})
+      this.setData({ value: ++this.data.value});
+      this.triggerEvent("add");
     },
     reduce(){
-      this.setData({ value: --this.data.value })
+      this.setData({ value: --this.data.value });
+      this.triggerEvent("reduce");
     }
   }
 })

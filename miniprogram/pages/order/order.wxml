@@ -1,0 +1,13 @@
+<!--pages/order/order.wxml-->
+<text>pages/order/order.wxml</text>
+
+
+<view class="service-nav-tab">
+  <view class="order-header">
+    <text class="status-tab">全部</text>
+    <text class="status-tab">待支付</text>
+    <text class="status-tab">进行中</text>
+    <text class="status-tab">已完成</text>
+    <text class="status-tab">已取消</text>
+  </view>
+</view>

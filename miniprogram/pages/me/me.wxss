@@ -35,27 +35,27 @@
 }
 .user-detail .user-container {
     position: relative;
-    top: -35px;
-    margin-bottom: -35px;
+    top: -70rpx;
+    margin-bottom: -70rpx;
 }
 
 .user-detail .info-wrapper {
-    width: 320px;
+    width: 640rpx;
     margin: 0 auto;
     border-radius: 4px;
 }
 
 .user-detail .info-detail-item {
-    padding: 0 15px;
-    margin-bottom: 10px;
+    padding: 0 30rpx;
+    margin-bottom: 20rpx;
     background-color: #fff;
-    border-radius: 4px;
+    border-radius: 8rpx;
     box-shadow: 0 0 8px 0 rgba(0,0,0,.03);
     overflow: hidden;
 }
 .user-detail .all-order {
-    height: 44px;
-    line-height: 44px;
+    height: 88rpx;
+    line-height: 88rpx;
     border-bottom: 1px solid #eee;
     position: relative;
     cursor: pointer;
@@ -105,9 +105,9 @@
 }
 
 .user-detail .tip-bubble {
-    width: 18px;
-    height: 18px;
-    line-height: 18px;
+    width: 36rpx;
+    height: 36rpx;
+    line-height: 36rpx;
     position: absolute;
     top: -9px;
     right: -3px;
@@ -120,31 +120,31 @@
 }
 
 .user-detail .message-header {
-    height: 45px;
-    line-height: 45px;
+    height: 90rpx;
+    line-height: 90rpx;
 }
 .user-detail .message-item {
-    padding-top: 14px;
-    margin-bottom: 14px;
-    font-size: 13px;
-    letter-spacing: .3px;
+    padding-top: 28rpx;
+    margin-bottom: 28rpx;
+    font-size: 26rpx;
+    letter-spacing: .6rpx;
     border-top: 1px solid #eee;
 }
 .user-detail .service-info {
-    height: 55px;
-    margin-bottom: 10px;
+    height: 110rpx;
+    margin-bottom: 20rpx;
     background-color: #f8f8f8;
     overflow: hidden;
 }
 .user-detail .service-img-wrap {
     width: 55px;
     height: 100%;
-    margin-right: 10px;
+    margin-right: 20rpx;
     float: left;
     background:0 -868px no-repeat;
 }
 .user-detail .service-name {
-    margin-top: 10px;
+    margin-top: 20rpx;
 }
 .ellipsis {
     overflow: hidden;
@@ -152,8 +152,8 @@
     white-space: nowrap;
 }
 .user-detail .service-intro {
-    font-size: 12px;
-    margin-top: 4px;
+    font-size: 24rpx;
+    margin-top: 8rpx;
     color: #888;
 }
 .ellipsis {
@@ -162,16 +162,16 @@
     white-space: nowrap;
 }
 .user-detail .view-more {
-    margin-bottom: 10px;
+    margin-bottom: 20rpx;
     text-align: center;
-    font-size: 12px;
+    font-size: 24rpx;
     color: #888;
     cursor: pointer;
 }
 .user-detail .view-more .before {
     content: '';
-    width: 11px;
-    height: 7px;
+    width: 22rpx;
+    height: 14rpx;
     margin-right: 10px;
     display: inline-block;
     vertical-align: middle;
@@ -181,21 +181,21 @@
 
 
 .user-detail .user-info {
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 10rpx;
+    padding-bottom: 10rpx;
 }
 .user-detail .address, .user-detail .phone {
     cursor: pointer;
 }
 .user-detail .info-item {
-    padding: 10px 0;
+    padding: 20rpx 0;
     display: flex;
     justify-content: space-between;
 }
 .user-detail .item-icon {
     width: 16px;
     height: 16px;
-    margin-top: 2px;
+    margin-top: 4rpx;
     background-repeat: no-repeat;
     flex-shrink: 0;
 }
@@ -219,11 +219,11 @@
 .user-detail .item-text {
     flex-grow: 1;
     text-align: justify;
-    margin: 0 10px;
+    margin: 0 20rpx;
     word-break: break-word;
 }
 .user-detail .address .dist {
-    margin-right: 10px;
+    margin-right: 20rpx;
     color: #999;
 }
 .user-detail .more-icon {

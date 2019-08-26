@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)https://www.cnblogs.com/jf-67/p/8440758.html -->
+<html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="origin">
+    <meta property="og:description" content="Array.from()方法就是将一个类数组对象或者可遍历对象转换成一个真正的数组。 那么什么是类数组对象呢？所谓类数组对象，最基本的要求就是具有length属性的对象。 1、将类数组对象转换为真正数">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <title>ES6之Array.from()方法 - 江峰★ - 博客园</title>
+    
+    <link rel="shortcut icon" href="https://common.cnblogs.com/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./ES6之Array.from()方法 - 江峰★ - 博客园_files/blog-common.min.css">
+    <link id="MainCss" rel="stylesheet" href="./ES6之Array.from()方法 - 江峰★ - 博客园_files/bundle-coffee.min.css">
+    <link type="text/css" rel="stylesheet" href="./ES6之Array.from()方法 - 江峰★ - 博客园_files/331903.css">
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="./ES6之Array.from()方法 - 江峰★ - 博客园_files/bundle-coffee-mobile.min.css">
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/jf-67/rss">
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/jf-67/rsd.xml">
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/jf-67/wlwmanifest.xml">
+    <script src="./ES6之Array.from()方法 - 江峰★ - 博客园_files/amp4ads-host-v0.js.下载"></script><script src="./ES6之Array.from()方法 - 江峰★ - 博客园_files/pubads_impl_rendering_2019081901.js.下载"></script><script async="" src="./ES6之Array.from()方法 - 江峰★ - 博客园_files/analytics.js.下载"></script><script src="./ES6之Array.from()方法 - 江峰★ - 博客园_files/jquery-2.2.0.min.js.下载"></script>
+    <script src="./ES6之Array.from()方法 - 江峰★ - 博客园_files/blog-common.min.js.下载"></script>
+    <script>
+        var currentBlogId = 331903;
+        var currentBlogApp = 'jf-67';
+        var cb_enable_mathjax = true;
+        var isLogined = false;
+    </script>
+    <script type="text/x-mathjax-config;executed=true">
+        MathJax.Hub.Config({
+        tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], processClass: 'math', processEscapes: true },
+        TeX: {
+        equationNumbers: { autoNumber: ['AMS'], useLabelIds: true },
+        extensions: ['extpfeil.js', 'mediawiki-texvc.js'],
+        Macros: {bm: "\\boldsymbol"}
+        },
+        'HTML-CSS': { linebreaks: { automatic: true } },
+        SVG: { linebreaks: { automatic: true } }
+        });
+    </script>
+    <script src="./ES6之Array.from()方法 - 江峰★ - 博客园_files/MathJax.js.下载"></script>
+    
+<link rel="preload" href="./ES6之Array.from()方法 - 江峰★ - 博客园_files/f.txt" as="script"><script type="text/javascript" src="./ES6之Array.from()方法 - 江峰★ - 博客园_files/f.txt"></script><script src="./ES6之Array.from()方法 - 江峰★ - 博客园_files/pubads_impl_2019081901.js.下载" async=""></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover, .MJXp-munder {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > *, .MJXp-munder > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><link rel="prefetch" href="https://tpc.googlesyndication.com/safeframe/1-0-35/html/container.html"></head>
+<body><div id="MathJax_Message" style="display: none;"></div>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a href="https://www.cnblogs.com/jf-67/"><img id="blogLogo" src="./ES6之Array.from()方法 - 江峰★ - 博客园_files/logo.gif" alt="返回主页"></a>			
+		
+<!--done-->
+<h1>
+<a id="Header1_HeaderTitle" class="headermaintitle" href="https://www.cnblogs.com/jf-67/">心欲无痕</a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="navigator">
+			
+<ul id="navList">
+	<li style="height: 56px;"><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/" style="margin-right: 0px;">
+博客园</a>
+</li>
+	<li style="height: 56px;">
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/jf-67/" style="margin-right: 0px;">
+首页</a>
+</li>
+	<li style="height: 56px;">
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1" style="margin-right: 0px;">
+新随笔</a>
+</li>
+	<li style="height: 56px;">
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E6%B1%9F%E5%B3%B0%E2%98%85" style="margin-right: 0px;">
+联系</a></li>
+	<li style="height: 56px;">
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/" style="margin-right: 0px;">
+管理</a>
+</li>
+	<li style="height: 56px;">
+
+	
+</li>
+</ul>
+
+
+
+			<div class="blogStats">
+				
+				<!--done-->
+随笔- 
+130&nbsp;
+文章- 
+0&nbsp;
+评论- 
+25&nbsp;
+
+
+
+				
+			</div><!--end: blogStats -->
+		</div><!--end: navigator 博客导航栏 -->
+		<div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class="post">
+		<h1 class="postTitle">
+			
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/jf-67/p/8440758.html">ES6之Array.from()方法</a>
+
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			
+<div id="cnblogs_post_body" class="blogpost-body ">
+    <p>　　Array.from()方法就是将一个类数组对象或者可遍历对象转换成一个真正的数组。</p>
+<p>　　那么什么是类数组对象呢？所谓类数组对象，最基本的要求就是具有length属性的对象。</p>
+<p>　　1、将类数组对象转换为真正数组：</p>
+<div class="cnblogs_Highlighter sh-gutter">
+<div><div id="highlighter_817901" class="syntaxhighlighter  javascript"><div class="toolbar"><span><a href="https://www.cnblogs.com/jf-67/p/8440758.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="javascript keyword">let</code> <code class="javascript plain">arrayLike = {</code></div><div class="line number2 index1 alt1"><code class="javascript spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="javascript plain">0: </code><code class="javascript string">'tom'</code><code class="javascript plain">,&nbsp; </code></div><div class="line number3 index2 alt2"><code class="javascript spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="javascript plain">1: </code><code class="javascript string">'65'</code><code class="javascript plain">,</code></div><div class="line number4 index3 alt1"><code class="javascript spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="javascript plain">2: </code><code class="javascript string">'男'</code><code class="javascript plain">,</code></div><div class="line number5 index4 alt2"><code class="javascript spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="javascript plain">3: [</code><code class="javascript string">'jane'</code><code class="javascript plain">,</code><code class="javascript string">'john'</code><code class="javascript plain">,</code><code class="javascript string">'Mary'</code><code class="javascript plain">],</code></div><div class="line number6 index5 alt1"><code class="javascript spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="javascript string">'length'</code><code class="javascript plain">: 4</code></div><div class="line number7 index6 alt2"><code class="javascript plain">}</code></div><div class="line number8 index7 alt1"><code class="javascript keyword">let</code> <code class="javascript plain">arr = Array.from(arrayLike)</code></div><div class="line number9 index8 alt2"><code class="javascript plain">console.log(arr) </code><code class="javascript comments">// ['tom','65','男',['jane','john','Mary']]</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>　　</p>
+<p>　　那么，如果将上面代码中length属性去掉呢？实践证明，答案会是一个长度为0的空数组。</p>
+<p>　　这里将代码再改一下，就是具有length属性，但是对象的属性名不再是数字类型的，而是其他字符串型的，代码如下：</p>
+<div class="cnblogs_Highlighter sh-gutter">
+<div><div id="highlighter_456630" class="syntaxhighlighter  javascript"><div class="toolbar"><span><a href="https://www.cnblogs.com/jf-67/p/8440758.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="javascript keyword">let</code> <code class="javascript plain">arrayLike = {</code></div><div class="line number2 index1 alt1"><code class="javascript spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="javascript string">'name'</code><code class="javascript plain">: </code><code class="javascript string">'tom'</code><code class="javascript plain">,&nbsp; </code></div><div class="line number3 index2 alt2"><code class="javascript spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="javascript string">'age'</code><code class="javascript plain">: </code><code class="javascript string">'65'</code><code class="javascript plain">,</code></div><div class="line number4 index3 alt1"><code class="javascript spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="javascript string">'sex'</code><code class="javascript plain">: </code><code class="javascript string">'男'</code><code class="javascript plain">,</code></div><div class="line number5 index4 alt2"><code class="javascript spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="javascript string">'friends'</code><code class="javascript plain">: [</code><code class="javascript string">'jane'</code><code class="javascript plain">,</code><code class="javascript string">'john'</code><code class="javascript plain">,</code><code class="javascript string">'Mary'</code><code class="javascript plain">],</code></div><div class="line number6 index5 alt1"><code class="javascript spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="javascript plain">length: 4</code></div><div class="line number7 index6 alt2"><code class="javascript plain">}</code></div><div class="line number8 index7 alt1"><code class="javascript keyword">let</code> <code class="javascript plain">arr = Array.from(arrayLike)</code></div><div class="line number9 index8 alt2"><code class="javascript plain">console.log(arr)&nbsp; </code><code class="javascript comments">// [ undefined, undefined, undefined, undefined ]</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>　　会发现结果是长度为4，元素均为undefined的数组</p>
+<p>　　由此可见，要<span style="color: #ff0000;">将一个类数组对象转换为一个真正的数组，必须具备以下条件：</span></p>
+<p><span style="color: #ff0000;">　　1、该类数组对象必须具有length属性，用于指定数组的长度。如果没有length属性，那么转换后的数组是一个空数组。</span></p>
+<p><span style="color: #ff0000;">　　2、该类数组对象的属性名必须为数值型或字符串型的数字</span></p>
+<p><span style="color: #ff0000;">　　ps: 该类数组对象的属性名可以加引号，也可以不加引号</span></p>
+<p>&nbsp;</p>
+<p>　　2、将Set结构的数据转换为真正的数组：　</p>
+<div class="cnblogs_Highlighter sh-gutter">
+<div><div id="highlighter_893077" class="syntaxhighlighter  javascript"><div class="toolbar"><span><a href="https://www.cnblogs.com/jf-67/p/8440758.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="javascript keyword">let</code> <code class="javascript plain">arr = [12,45,97,9797,564,134,45642]</code></div><div class="line number2 index1 alt1"><code class="javascript keyword">let</code> <code class="javascript plain">set = </code><code class="javascript keyword">new</code> <code class="javascript plain">Set(arr)</code></div><div class="line number3 index2 alt2"><code class="javascript plain">console.log(Array.from(set))&nbsp; </code><code class="javascript comments">// [ 12, 45, 97, 9797, 564, 134, 45642 ]</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>　　</p>
+<p>　　<code>Array.from</code>还可以接受第二个参数，作用类似于数组的<code>map</code>方法，用来对每个元素进行处理，将处理后的值放入返回的数组。如下：</p>
+<div class="cnblogs_Highlighter sh-gutter">
+<div><div id="highlighter_881610" class="syntaxhighlighter  javascript"><div class="toolbar"><span><a href="https://www.cnblogs.com/jf-67/p/8440758.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="javascript keyword">let</code> <code class="javascript plain">arr = [12,45,97,9797,564,134,45642]</code></div><div class="line number2 index1 alt1"><code class="javascript keyword">let</code> <code class="javascript plain">set = </code><code class="javascript keyword">new</code> <code class="javascript plain">Set(arr)</code></div><div class="line number3 index2 alt2"><code class="javascript plain">console.log(Array.from(set, item =&gt; item + 1)) </code><code class="javascript comments">// [ 13, 46, 98, 9798, 565, 135, 45643 ]</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>　　</p>
+<p>　　3、将字符串转换为数组：</p>
+<div class="cnblogs_Highlighter sh-gutter">
+<div><div id="highlighter_795694" class="syntaxhighlighter  javascript"><div class="toolbar"><span><a href="https://www.cnblogs.com/jf-67/p/8440758.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="javascript keyword">let</code>&nbsp; <code class="javascript plain">str = </code><code class="javascript string">'hello world!'</code><code class="javascript plain">;</code></div><div class="line number2 index1 alt1"><code class="javascript plain">console.log(Array.from(str)) </code><code class="javascript comments">// ["h", "e", "l", "l", "o", " ", "w", "o", "r", "l", "d", "!"]</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>　　</p>
+<p>　　4、Array.from参数是一个真正的数组：</p>
+<div class="cnblogs_Highlighter sh-gutter">
+<div><div id="highlighter_918633" class="syntaxhighlighter  javascript"><div class="toolbar"><span><a href="https://www.cnblogs.com/jf-67/p/8440758.html#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="javascript plain">console.log(Array.from([12,45,47,56,213,4654,154]))</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>　　像这种情况，Array.from会返回一个一模一样的新数组</p>
+</div>
+<div id="MySignature" style="display: block;"><p style="background: rgb(230,250,230); padding: 10px; border: 1px dashed rgb(224,224,224); font-family: 微软雅黑; font-size: 13px;">
+作者：<a href="http://www.cnblogs.com/jf-67/" target="_blank">江峰★</a>
+<br>
+出处：<a href="http://www.cnblogs.com/jf-67/" target="_blank">http://www.cnblogs.com/jf-67/</a>
+<br>
+本文版权归作者和博客园共有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文链接，否则保留追究法律责任的权利
+</p></div>
+<div class="clear"></div>
+<div id="blog_post_info_block"><div id="BlogPostCategory">
+    分类: 
+            <a href="https://www.cnblogs.com/jf-67/category/1112828.html" target="_blank">ES6</a></div>
+
+
+    <div id="blog_post_info">
+<div id="green_channel">
+        <a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(8440758,cb_blogId,1);green_channel_success(this,&#39;谢谢推荐！&#39;);">好文要顶</a>
+        <a id="green_channel_follow" onclick="follow(&#39;48b3d5f5-0ef1-e611-845c-ac853d9f53ac&#39;);" href="javascript:void(0);">关注我</a>
+    <a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a>
+    <a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="./ES6之Array.from()方法 - 江峰★ - 博客园_files/icon_weibo_24.png" alt=""></a>
+    <a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="./ES6之Array.from()方法 - 江峰★ - 博客园_files/wechat.png" alt=""></a>
+</div>
+<div id="author_profile">
+    <div id="author_profile_info" class="author_profile_info">
+            <a href="https://home.cnblogs.com/u/jf-67/" target="_blank"><img src="./ES6之Array.from()方法 - 江峰★ - 博客园_files/20170212184344.png" class="author_avatar" alt=""></a>
+        <div id="author_profile_detail" class="author_profile_info">
+            <a href="https://home.cnblogs.com/u/jf-67/">江峰★</a><br>
+            <a href="https://home.cnblogs.com/u/jf-67/followees/">关注 - 14</a><br>
+            <a href="https://home.cnblogs.com/u/jf-67/followers/">粉丝 - 51</a>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div id="author_profile_honor"></div>
+    <div id="author_profile_follow">
+                <a href="javascript:void(0);" onclick="follow(&#39;48b3d5f5-0ef1-e611-845c-ac853d9f53ac&#39;);return false;">+加关注</a>
+    </div>
+</div>
+<div id="div_digg">
+    <div class="diggit" onclick="votePost(8440758,&#39;Digg&#39;)">
+        <span class="diggnum" id="digg_count">4</span>
+    </div>
+    <div class="buryit" onclick="votePost(8440758,&#39;Bury&#39;)">
+        <span class="burynum" id="bury_count">0</span>
+    </div>
+    <div class="clear"></div>
+    <div class="diggword" id="digg_tips">
+    </div>
+</div>
+
+<script type="text/javascript">
+    currentDiggType = 0;
+</script></div>
+    <div class="clear"></div>
+    <div id="post_next_prev">
+
+    <a href="https://www.cnblogs.com/jf-67/p/8425405.html" class="p_n_p_prefix">« </a> 上一篇：    <a href="https://www.cnblogs.com/jf-67/p/8425405.html" title="发布于 2018-02-07 10:24">谷歌浏览器限制端口号6666如何解决？</a>
+    <br>
+    <a href="https://www.cnblogs.com/jf-67/p/8473612.html" class="p_n_p_prefix">» </a> 下一篇：    <a href="https://www.cnblogs.com/jf-67/p/8473612.html" title="发布于 2018-02-26 15:49">实现图文不可复制效果</a>
+
+</div>
+</div>
+		</div>
+		<div class="postDesc">posted @ 
+<span id="post-date">2018-02-11 11:01</span>&nbsp;<a href="https://www.cnblogs.com/jf-67/">江峰★</a> 阅读(<span id="post_view_count">24186</span>) 评论(<span id="post_comment_count">2</span>) <a href="https://i.cnblogs.com/EditPosts.aspx?postid=8440758" rel="nofollow"> 编辑</a> <a href="javascript:void(0)" onclick="AddToWz(8440758); return false;">收藏</a>
+</div>
+	</div>
+	
+	
+</div><!--end: topics 文章、评论容器-->
+<script src="./ES6之Array.from()方法 - 江峰★ - 博客园_files/highlight.min.js.下载"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 331903, cb_blogApp = 'jf-67', cb_blogUserGuid = '48b3d5f5-0ef1-e611-845c-ac853d9f53ac';
+    var cb_entryId = 8440758, cb_entryCreatedDate = '2018-02-11 11:01', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder">
+
+<div id="comment_pager_top">
+    
+</div>
+
+<!--done-->
+<br>
+<div class="feedback_area_title">评论</div>
+<div class="feedbackNoItems"><div class="feedbackNoItems"></div></div>
+	
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;
+
+<span class="comment_actions">
+    
+    
+    
+    
+</span>
+
+
+				</div>
+				
+<a href="https://www.cnblogs.com/jf-67/p/8440758.html#4154609" class="layer">#1楼</a>
+<a name="4154609" id="comment_anchor_4154609"></a>
+
+
+<span class="comment_date">2019-01-03 14:15</span>
+
+ | 
+
+            <a id="a_comment_author_4154609" href="https://www.cnblogs.com/xufeng1994/" target="_blank">无所不能的风</a>
+
+			</div>
+			<div class="feedbackCon">
+				
+<div id="comment_body_4154609" class="blog_comment_body">
+    将字符串转换为数组也可以使用<br>str.split('')<br>这个是String对象的方法 分割
+</div>
+        <div class="comment_vote">
+            <a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(&#39;4154609&#39;, &#39;Digg&#39;, this);">
+                支持(0)
+            </a>
+            <a href="javascript:void(0);" class="comment_burry" onclick="return voteComment(&#39;4154609&#39;, &#39;Bury&#39;, this);">
+                反对(0)
+            </a>
+        </div>
+        <span id="comment_4154609_avatar" style="display:none">
+            https://pic.cnblogs.com/face/1552596/20181202213847.png
+        </span>
+
+			</div>
+		</div>
+		<div class="feedbackItem">
+			<div class="feedbackListSubtitle">
+				<div class="feedbackManage">
+					&nbsp;&nbsp;
+
+<span class="comment_actions">
+    
+    
+    
+    
+</span>
+
+
+				</div>
+				
+<a href="https://www.cnblogs.com/jf-67/p/8440758.html#4168194" class="layer">#2楼</a>
+<a name="4168194" id="comment_anchor_4168194"></a>
+[<span class="louzhu">楼主</span>]
+        <span id="comment-maxId" style="display:none">4168194</span>
+        <span id="comment-maxDate" style="display:none">2019/1/22 下午2:50:52</span>
+
+<span class="comment_date">2019-01-22 14:50</span>
+
+ | 
+
+            <a id="a_comment_author_4168194" href="https://www.cnblogs.com/jf-67/" target="_blank">江峰★</a>
+
+			</div>
+			<div class="feedbackCon">
+				
+<div id="comment_body_4168194" class="blog_comment_body">
+    <a href="https://www.cnblogs.com/jf-67/p/8440758.html#4154609" title="查看所回复的评论" onclick="commentManager.renderComments(0,50,4154609);">@</a>
+无所不能的风<br>嗯嗯，是的。感谢大佬指出来
+</div>
+        <div class="comment_vote">
+            <a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(&#39;4168194&#39;, &#39;Digg&#39;, this);">
+                支持(0)
+            </a>
+            <a href="javascript:void(0);" class="comment_burry" onclick="return voteComment(&#39;4168194&#39;, &#39;Bury&#39;, this);">
+                反对(0)
+            </a>
+        </div>
+        <span id="comment_4168194_avatar" style="display:none">
+            https://pic.cnblogs.com/face/1105097/20170212184344.png
+        </span>
+
+			</div>
+		</div>
+
+<div id="comment_pager_bottom">
+    
+</div>
+
+
+</div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="https://www.cnblogs.com/jf-67/p/8440758.html#" onclick="return RefreshPage();">刷新页面</a><a href="https://www.cnblogs.com/jf-67/p/8440758.html#top">返回顶部</a></div>
+    <div id="comment_form_container"><div class="login_tips">
+    注册用户登录后才能发表评论，请 
+    <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return login(&#39;commentform&#39;);">登录</a>
+     或 
+    <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return register();">注册</a>，
+    <a href="https://www.cnblogs.com/">访问</a> 网站首页。
+</div></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"><a href="http://www.ucancode.com/index.htm" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-工控&#39;)">【推荐】超50万C++/C#源码: 大型实时仿真组态图形源码</a><br><a href="http://clickc.admaster.com.cn/c/a131574,b3595115,c1705,i0,m101,8a1,8b3,h" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-华为云微认证&#39;)">【推荐】零基础轻松玩转云上产品，获壕礼加返百元大礼</a><br><a href="http://clickc.admaster.com.cn/c/a131575,b3595121,c1705,i0,m101,8a1,8b3,h" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Link&#39;, &#39;click&#39;, &#39;T2-物联网&#39;)">【推荐】华为IoT平台开发者套餐9.9元起，购买即送免费课程</a><br></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="./ES6之Array.from()方法 - 江峰★ - 博客园_files/gpt.js.下载"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block" style="">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;" data-google-query-id="CI_z3eGZm-QCFQgwlgod2VANYA"><div id="google_ads_iframe_/1090369/C1_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/1090369/C1_0" title="3rd party ad content" name="google_ads_iframe_/1090369/C1_0" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" data-google-container-id="1" style="border: 0px; vertical-align: bottom;" data-load-complete="true" src="./ES6之Array.from()方法 - 江峰★ - 博客园_files/saved_resource.html"></iframe></div></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block" style="">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;" data-google-query-id="CJDz3eGZm-QCFQgwlgod2VANYA">
+            
+        <div id="google_ads_iframe_/1090369/C2_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/1090369/C2_0" title="3rd party ad content" name="google_ads_iframe_/1090369/C2_0" width="468" height="60" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" data-google-container-id="2" style="border: 0px; vertical-align: bottom;" data-load-complete="true" src="./ES6之Array.from()方法 - 江峰★ - 博客园_files/saved_resource(1).html"></iframe></div></div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div></div>
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem"><!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	
+<div id="blog-news">
+    <script type="text/javascript">window['__document_write_ajax_callbacks__']['3']();</script><script>window['__document_write_ajax_callbacks__']['1']();</script>
+    <div id="profile_block">
+        昵称：
+        <a href="https://home.cnblogs.com/u/jf-67/">
+            江峰★
+        </a>
+        <br>
+        园龄：
+        <a href="https://home.cnblogs.com/u/jf-67/" title="入园时间：2017-02-12">
+            2年6个月
+        </a>
+        <br>
+        粉丝：
+        <a href="https://home.cnblogs.com/u/jf-67/followers/">
+            51
+        </a>
+        <br>
+        关注：
+        <a href="https://home.cnblogs.com/u/jf-67/followees/">
+            14
+        </a>
+        <div id="p_b_follow">
+<a href="javascript:void(0)" onclick="follow(&#39;48b3d5f5-0ef1-e611-845c-ac853d9f53ac&#39;)">+加关注</a></div>
+        <script type="text/javascript">window['__document_write_ajax_callbacks__']['4']();</script><script>window['__document_write_ajax_callbacks__']['2']();</script>
+    </div>
+</div>
+</div>
+
+</div>
+
+			<div id="calendar" style="background-color: rgb(255, 255, 255); box-shadow: rgb(204, 204, 204) 2px 2px 3px;"><div id="blog-calendar" style="">
+
+<table id="blogCalendar" class="Cal" cellspacing="0" cellpadding="0" title="Calendar" border="0">
+    <tbody>
+        <tr>
+            <td colspan="7">
+                <table class="CalTitle" cellspacing="0" border="0">
+                    <tbody>
+                        <tr>
+                            <td class="CalNextPrev">
+                                <a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2019/07/24&#39;); return false;">&lt;</a>
+                            </td>
+                            <td align="center">2019年8月</td>
+                            <td align="right" class="CalNextPrev">
+                                <a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2019/09/24&#39;); return false;">&gt;</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+                    <th class="CalDayHeader" align="center" abbr="日" scope="col">日</th>
+                    <th class="CalDayHeader" align="center" abbr="一" scope="col">一</th>
+                    <th class="CalDayHeader" align="center" abbr="二" scope="col">二</th>
+                    <th class="CalDayHeader" align="center" abbr="三" scope="col">三</th>
+                    <th class="CalDayHeader" align="center" abbr="四" scope="col">四</th>
+                    <th class="CalDayHeader" align="center" abbr="五" scope="col">五</th>
+                    <th class="CalDayHeader" align="center" abbr="六" scope="col">六</th>
+        </tr>
+            <tr>
+                            <td class="CalOtherMonthDay" align="center">28</td>
+                            <td class="CalOtherMonthDay" align="center">29</td>
+                            <td class="CalOtherMonthDay" align="center">30</td>
+                            <td class="CalOtherMonthDay" align="center">31</td>
+                        <td class="" align="center">
+                            1
+                        </td>
+                        <td class="" align="center">
+                            2
+                        </td>
+                    <td class="CalWeekendDay" align="center">
+                        3
+                    </td>
+            </tr>
+                <tr>
+                        <td class="CalWeekendDay" align="center">
+                            4
+                        </td>
+                            <td class="" align="center">
+                                5
+                            </td>
+                            <td class="" align="center">
+                                6
+                            </td>
+                            <td class="" align="center">
+                                7
+                            </td>
+                            <td class="" align="center">
+                                8
+                            </td>
+                            <td class="" align="center">
+                                9
+                            </td>
+                        <td class="CalWeekendDay" align="center">
+                            10
+                        </td>
+                </tr>
+                <tr>
+                        <td class="CalWeekendDay" align="center">
+                            11
+                        </td>
+                            <td class="" align="center">
+                                12
+                            </td>
+                            <td class="" align="center">
+                                13
+                            </td>
+                            <td class="" align="center">
+                                14
+                            </td>
+                            <td class="" align="center">
+                                15
+                            </td>
+                            <td class="" align="center">
+                                16
+                            </td>
+                        <td class="CalWeekendDay" align="center">
+                            17
+                        </td>
+                </tr>
+                <tr>
+                        <td class="CalWeekendDay" align="center">
+                            18
+                        </td>
+                            <td class="" align="center">
+                                19
+                            </td>
+                            <td class="" align="center">
+                                <a href="https://www.cnblogs.com/jf-67/archive/2019/08/20.html"><u>20</u></a>
+                            </td>
+                            <td class="" align="center">
+                                21
+                            </td>
+                            <td class="" align="center">
+                                22
+                            </td>
+                            <td class="" align="center">
+                                23
+                            </td>
+                        <td class="CalTodayDay" align="center">
+                            24
+                        </td>
+                </tr>
+                <tr>
+                        <td class="CalWeekendDay" align="center">
+                            25
+                        </td>
+                            <td class="" align="center">
+                                26
+                            </td>
+                            <td class="" align="center">
+                                27
+                            </td>
+                            <td class="" align="center">
+                                28
+                            </td>
+                            <td class="" align="center">
+                                29
+                            </td>
+                            <td class="" align="center">
+                                30
+                            </td>
+                        <td class="CalWeekendDay" align="center">
+                            31
+                        </td>
+                </tr>
+                <tr>
+                        <td class="CalOtherMonthDay" align="center">
+                            1
+                        </td>
+                            <td class="CalOtherMonthDay" align="center">
+                                2
+                            </td>
+                            <td class="CalOtherMonthDay" align="center">
+                                3
+                            </td>
+                            <td class="CalOtherMonthDay" align="center">
+                                4
+                            </td>
+                            <td class="CalOtherMonthDay" align="center">
+                                5
+                            </td>
+                            <td class="CalOtherMonthDay" align="center">
+                                6
+                            </td>
+                        <td class="CalOtherMonthDay" align="center">
+                            7
+                        </td>
+                </tr>
+    </tbody>
+</table></div><script>loadBlogDefaultCalendar();</script></div>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn">
+
+<!-- 搜索 -->
+<div id="sidebar_search" class="sidebar-block">
+    <div id="sidebar_search" class="mySearch">
+        <h3 class="catListTitle">搜索</h3>
+        <div id="sidebar_search_box">
+            <div id="widget_my_zzk" class="div_my_zzk">
+                <input type="text" id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk">&nbsp;<input onclick="zzk_go()" type="button" value="找找看" id="btnZzk" class="btn_my_zzk">
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<!-- 常用链接 -->
+
+
+<!-- 最新随笔 -->
+
+
+
+<!-- 我的标签 -->
+
+
+<!-- 积分与排名 -->
+<div id="sidebar_scorerank" class="sidebar-block">
+    <div class="catListBlogRank">
+<h3 class="catListTitle">积分与排名</h3>
+<ul>
+	<li class="liScore">
+        积分 -	
+152837
+    </li>
+	<li class="liRank">
+		排名 -	
+2961
+	</li>
+</ul>
+</div>
+
+
+
+
+</div>
+
+<!-- 随笔分类、随笔档案、文章分类、新闻分类、相册、链接 -->
+<div id="sidebar_categories">
+    
+<div class="catListPostCategory">
+<h3 class="catListTitle">
+
+随笔分类
+<span style="font-size:11px;font-weight:normal">(150)</span>
+
+</h3>
+
+
+<ul>
+
+<li>
+<a href="https://www.cnblogs.com/jf-67/category/949985.html" rel="">
+    AngularJS(3)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/category/1126003.html" rel="">
+    atom(2)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/category/1169445.html" rel="">
+    axios(2)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/category/949982.html" rel="">
+    css(9)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/category/1112828.html" rel="">
+    ES6(4)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/category/950541.html" rel="">
+    GitHub(5)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/category/974601.html" rel="">
+    html5(7)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/category/1160854.html" rel="">
+    iView(5)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/category/949980.html" rel="">
+    javascript(45)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/category/1104153.html" rel="">
+    jQuery(6)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/category/1123264.html" rel="">
+    layui(2)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/category/1250649.html" rel="">
+    node.js(1)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/category/1220267.html" rel="">
+    React(1)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/category/1143246.html" rel="">
+    React Native(4)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/category/1018163.html" rel="">
+    Sass(5)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/category/1130446.html" rel="">
+    Sublime Text(3)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/category/1169674.html" rel="">
+    UUID(1)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/category/1020604.html" rel="">
+    vue.js(11)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/category/1027604.html" rel="">
+    webpack(3)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/category/949987.html" rel="">
+    web前端(19)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/category/1027524.html" rel="">
+    windows(1)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/category/1141856.html" rel="">
+    关于加密(1)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/category/1207551.html" rel="">
+    数据库(SQL、Oracle)(3)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/category/1173922.html" rel="">
+    微信小程序(6)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/category/1022579.html" rel="">
+    在虚拟机中安装乌班图(1)
+</a>
+ 
+</li>
+
+</ul>
+
+
+</div>
+<div class="catListPostArchive">
+<h3 class="catListTitle">
+
+随笔档案
+<span style="font-size:11px;font-weight:normal">(130)</span>
+
+</h3>
+
+
+<ul>
+
+<li>
+<a href="https://www.cnblogs.com/jf-67/archive/2019/08.html" rel="">
+    2019年8月(1)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/archive/2019/04.html" rel="">
+    2019年4月(1)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/archive/2019/03.html" rel="">
+    2019年3月(1)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/archive/2019/02.html" rel="">
+    2019年2月(1)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/archive/2019/01.html" rel="">
+    2019年1月(3)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/archive/2018/12.html" rel="">
+    2018年12月(1)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/archive/2018/11.html" rel="">
+    2018年11月(1)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/archive/2018/09.html" rel="">
+    2018年9月(3)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/archive/2018/08.html" rel="">
+    2018年8月(1)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/archive/2018/07.html" rel="">
+    2018年7月(1)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/archive/2018/06.html" rel="">
+    2018年6月(4)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/archive/2018/05.html" rel="">
+    2018年5月(6)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/archive/2018/04.html" rel="">
+    2018年4月(2)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/archive/2018/03.html" rel="">
+    2018年3月(7)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/archive/2018/02.html" rel="">
+    2018年2月(6)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/archive/2018/01.html" rel="">
+    2018年1月(7)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/archive/2017/12.html" rel="">
+    2017年12月(20)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/archive/2017/11.html" rel="">
+    2017年11月(5)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/archive/2017/10.html" rel="">
+    2017年10月(7)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/archive/2017/09.html" rel="">
+    2017年9月(2)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/archive/2017/08.html" rel="">
+    2017年8月(2)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/archive/2017/07.html" rel="">
+    2017年7月(11)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/archive/2017/06.html" rel="">
+    2017年6月(11)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/archive/2017/05.html" rel="">
+    2017年5月(1)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/archive/2017/04.html" rel="">
+    2017年4月(1)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/archive/2017/03.html" rel="">
+    2017年3月(11)
+</a>
+ 
+</li>
+<li>
+<a href="https://www.cnblogs.com/jf-67/archive/2017/02.html" rel="">
+    2017年2月(13)
+</a>
+ 
+</li>
+
+</ul>
+
+
+</div>
+
+
+</div>
+
+<!-- 最新评论 -->
+
+
+
+
+<!-- 阅读排行榜 -->
+<div id="sidebar_topviewedposts" class="sidebar-block">
+    <div class="catListView">
+<h3 class="catListTitle">阅读排行榜</h3>
+	<div id="TopViewPostsBlock">
+        <ul style="word-break:break-all">
+                    <li>
+                        <a href="https://www.cnblogs.com/jf-67/p/7241252.html">
+                            1. HTML5之placeholder属性以及如何更改placeholder属性中文字颜色(101447)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/jf-67/p/6415637.html">
+                            2. 将项目（代码）从GitHub上克隆（下载）到本地仓库(49045)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/jf-67/p/8007008.html">
+                            3. js时间戳与时间日期间相互转换(30261)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/jf-67/p/6407763.html">
+                            4. web前端面试题及答案(25208)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/jf-67/p/7105263.html">
+                            5. webpack的安装与使用（单文件）(24894)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/jf-67/p/8440758.html">
+                            6. ES6之Array.from()方法(24185)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/jf-67/p/8479176.html">
+                            7. 基于iview的后台管理(13404)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/jf-67/p/8484012.html">
+                            8. Vue.js之下拉列表及选中触发事件(11669)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/jf-67/p/8987341.html">
+                            9. CSS选择器之兄弟选择器（~和+）(9770)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnblogs.com/jf-67/p/8527034.html">
+                            10. 微信小程序导出当前画布指定区域的内容并生成图片保存到本地相册(canvas)(9660)
+                        </a>
+                    </li>
+        </ul>
+    </div>
+</div>
+
+
+</div>
+
+<!-- 评论排行榜 -->
+
+
+<!-- 推荐排行榜 -->
+</div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright © 2019 江峰★
+<br><span id="poweredby">Powered by .NET Core 3.0 Preview 8 on Linux</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    <div id="page_end_html">
+        <style>
+   .returnTop{
+     position: fixed;
+     right: 20px;
+     bottom: 80px;
+     display: none;
+     text-align:center;
+     z-index: 999999;
+     line-height: 45px;
+   }
+   .returnTop a{
+     width: 50px;
+     height: 50px;
+     font-size:40px;
+     color:black;
+     display: block;
+     overflow: hidden;  
+     background:#aaa;
+     border-radius: 25px;
+   }
+   .returnTop a:hover{
+     background-position: -50px 0;
+     background-color: #AA7A53;;
+     color:white;
+     text-decoration:none;
+   }
+   #navList{
+    font-size:16px;
+    font-weight:bolder;
+   }
+   #navList li {
+    float: left;
+    width: 80px;
+    height: 30px; 
+    text-align:center;
+    }
+    #navList a {
+    display: inline-block;
+    height: 30px;
+    width: 80px;
+    line-height: 30px;
+    float: left;
+    text-align: center; 
+    padding-top:0px;
+    margin-left:0px；
+    margin-right:0px;
+    }
+    #navList a:hover{
+     background: #aa7a53;
+     color:#fff;
+     text-decoration:none;
+    }
+    .c_b_p_desc{
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    font-size:14px
+    }
+    #blog_stats{
+    display:none;
+    }
+@media screen and (max-width:490px){
+   #navList li,#navList a{
+      width:50px
+   }
+}
+</style>
+<div class="returnTop" id="returnTop" style="display: block;"><a href="https://www.cnblogs.com/jf-67/p/8440758.html" target="_self">∧</a></div>
+<script>
+      $(function(){
+         $("#navList li").css("height","56px");
+         $("#returnTop").hide();
+         $("#navList a").css("margin-right","0px")
+      });
+      $(window).scroll(function(){ 
+         if ($(window).scrollTop()>100){ 
+             $("#returnTop").fadeIn(1000); 
+         }else{ 
+              $("#returnTop").fadeOut(1000); 
+              } 
+      }); 
+      $("#returnTop").click(function(){ 
+           $('body,html').animate({scrollTop:0},400); 
+           return false; 
+      });
+</script>
+    </div>
+
+
+<script type="text/javascript">
+$(function(){
+  $("#calendar").css({
+      "background-color": "#fff",
+      "box-shadow": "2px 2px 3px #ccc"
+   })
+ 
+})
+</script><script type="text/javascript">getFollowStatus('48b3d5f5-0ef1-e611-845c-ac853d9f53ac');</script></body></html>
