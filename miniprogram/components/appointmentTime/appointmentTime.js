@@ -62,6 +62,7 @@ Component({
       this.triggerEvent("confirm",{
         canAppointDate, canAppointTime, canAppointWeek
       });
+      console.log(canAppointDate, canAppointTime, canAppointWeek);
       this.hideSetTime();
     },
 

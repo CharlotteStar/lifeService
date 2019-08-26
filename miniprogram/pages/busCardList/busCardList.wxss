@@ -17,7 +17,7 @@
     background:#fff;
 }
 .cardList-module .small-box-list {
-    padding: 5px 15px;
+    padding: 10rpx 30rpx;
     overflow: hidden;
 }
 .cardList-module .small-box-list .item-box {
@@ -28,18 +28,18 @@
     -ms-flex-align: center;
     align-items: center;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 8rpx;
     position: relative;
-    padding: 15px 0;
+    padding: 30rpx 0;
     border-bottom: 1px solid #eee;
 }
 .cardList-module .small-box-list .item-box:last-child {
     border-bottom: none;
 }
 .cardList-module .small-box-list .img-wrapper {
-    width: 60px;
-    height: 60px;
-    margin-right: 12px;
+    width: 120rpx;
+    height: 120rpx;
+    margin-right: 24rpx;
     border-radius: 4px;
     flex-shrink: 0;
     background-image: url(/images/icon/head.png?v=201801221411);

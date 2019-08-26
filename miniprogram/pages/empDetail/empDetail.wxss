@@ -16,9 +16,9 @@
 .jz_scrollbar__wrap {
     position: relative;
     overflow: scroll;
-    margin-right: -6px;
-    margin-bottom: -6px;
-    height: calc(100% + 6px);
+    margin-right: -12rpx;
+    margin-bottom: -12rpx;
+    height: calc(100% + 12rpx);
 }
 .jz-scrollbar .scrollbar-wrap,.jz_scrollbar__resize {
     overflow: hidden;
@@ -35,62 +35,62 @@
 }
 .business-card .card-bg {
     width: 100%;
-    height: 110px;
+    height: 220rpx;
     background-color: rgb(86, 187, 55);
     clip-path: ellipse(82% 100% at 50% 0);
     position: absolute;
 }
 .business-card .card-intro {
-    width: 345px;
-    height: 175px;
-    margin: 15px auto 20px;
+    width: 690rpx;
+    height: 350rpx;
+    margin: 30rpx auto 40rpx;
     background-color: #fff;
     position: relative;
-    border-radius: 5px;
-    box-shadow: 0 2px 20px 2px rgba(150,150,150,.2);
+    border-radius: 10rpx;
+    box-shadow: 0 4rpx 40rpx 4rpx rgba(150,150,150,.2);
 }
 .business-card .intro-content {
-    height: 130px;
-    padding: 20px 15px 0;
+    height:260rpx;
+    padding: 40rpx 30rpx 0;
     border-bottom: 1px dashed #eee;
     box-sizing: border-box;
     position: relative;
 }
 .business-card .firm-name {
-    max-width: 255px;
-    font-size: 16px;
-    margin-bottom: 16px;
+    max-width: 510rpx;
+    font-size: 32rpx;
+    margin-bottom: 32rpx;
     color: #999;
 }
 .business-card .name {
-    max-width: 230px;
-    font-size: 22px;
-    margin-bottom: 5px;
+    max-width: 460rpx;
+    font-size: 44rpx;
+    margin-bottom: 10rpx;
 }
 .business-card .job {
-    font-size: 12px;
+    font-size: 24rpx;
     color: #999;
 }
 .business-card .head-icon {
-    width: 46px;
-    height: 46px;
+    width: 92rpx;
+    height: 92rpx;
     position: absolute;
-    right: 15px;
-    top: 25px;
-    border-radius: 6px;
+    right: 30rpx;
+    top: 50rpx;
+    border-radius: 12rpx;
     overflow: hidden;
     background: url(/images/icon/head.png?v=201801221411) no-repeat;
     background-size: contain;
 }
 .business-card .intro-footer {
-    height: 45px;
-    line-height: 45px;
-    padding: 0 15px;
+    height: 90rpx;
+    line-height: 90rpx;
+    padding: 0 30rpx;
     position: relative;
     cursor: pointer;
 }
 .business-card .intro-footer text {
-    font-size: 13px;
+    font-size: 26rpx;
     color: #999;
 }
 .business-card .qr-code {
@@ -110,37 +110,37 @@
     background: no-repeat -1383px -315px;
 }
 .business-card .card-content {
-    width: 315px;
-    min-height: 200px;
+    width: 630rpx;
+    min-height: 400rpx;
     padding-left: 0px;
     margin: auto;
 }
 .business-card .card-nav {
-    height: 30px;
-    line-height: 30px;
+    height: 60rpx;
+    line-height: 60rpx;
 }
 .business-card .nav-item.active {
     transform: scale(1.2);
     color: #333;
 }
 .business-card .nav-item {
-    height: 30px;
-    line-height: 30px;
-    margin-right: 25px;
-    font-size: 13px;
+    height: 60rpx;
+    line-height: 60rpx;
+    margin-right: 50rpx;
+    font-size: 26rpx;
     color: #666;
     display: inline-block;
     cursor: pointer;
     transition: transform .2s ease;
 }
 .business-card .about-content, .business-card .connect-content {
-    padding-bottom: 10px;
-    margin-top: 10px;
+    padding-bottom: 20rpx;
+    margin-top: 20rpx;
 }
 .business-card .connect-item {
-    height: 49px;
-    line-height: 49px;
-    padding-right: 24px;
+    height: 98rpx;
+    line-height: 98rpx;
+    padding-right: 48rpx;
     border-bottom: 1px dashed #f0f0f0;
     position: relative;
     cursor: pointer;
@@ -180,13 +180,13 @@
 }
 
 .business-card .about-content, .business-card .connect-content {
-    padding-bottom: 10px;
-    margin-top: 10px;
+    padding-bottom: 20rpx;
+    margin-top: 20rpx;
 }
 .footer-area {
-    height: 60px;
-    line-height: 60px;
-    font-size: 12px;
+    height:120rpx;
+    line-height: 120rpx;
+    font-size: 24rpx;
     color: #999;
     text-align: center;
     background-color: #f4f4f4;

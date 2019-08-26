@@ -1,2 +1,82 @@
 <!--pages/onlineRepairs/onlineRepairs.wxml-->
-<text>pages/onlineRepairs/onlineRepairs.wxml</text>
+<!-- 上面维修 -->
+<view class="content_tab">
+<view class="tabNav">
+    <view wx:for="{{navTab}}" wx:key="index" data-idx="{{index}}" bindtap="currentTab" class="{{currentTab==index ? 'cur' : ''}}"><text class="mocolor">{{item}}</text>
+    </view>
+</view>
+    <!-- 横线 -->
+  <view class="tabNavhengxian"></view>
+    <!-- 结束横线 -->
+ <view class="orderInfo">
+   <view class="orderInfo-item" hidden="{{currentTab!=0}}">
+             <!-- 开始服务一 -->
+         <view class="crderconter">
+          <navigator url="/pages/msgBoard/msgBoard" hover-class="navigator-hover">
+           <view class="crder_img"><image src="../../images/online/dianzi.jpg" mode="scaleToFill"></image></view>
+           <view class="crder_text">手机电子维修，更换屏幕等手机电子维修</view>
+           <view class="crder_subtext">专业工程师现场检测您的设备，并采取现场面对面的透明化维修模式，让您的设备不用返厂</view>
+           <view class="crder_view">   <!--判断后台传数据1是默认，2是面议 3是免费 wx-if=""-->
+           <view><text class="crder_viewpicse">￥180</text><text class="crder_viewsubp">￥210</text></view>
+           <view class="crder_msg">面议</view>
+           <view class="crder_mianfei" wx-if="">免费</view>
+           <view class="crder_yuyue">已预约：10</view>
+           </view>
+           </navigator>
+         </view>
+         <!-- 结束服务一 -->
+               <!-- 开始服务一 -->
+         <view class="crderconter">
+          <navigator url="/pages/msgBoard/msgBoard" hover-class="navigator-hover">
+           <view class="crder_img"><image src="../../images/online/dianzi.jpg" mode="scaleToFill"></image></view>
+           <view class="crder_text">手机电子维修，更换屏幕等手机电子维修</view>
+           <view class="crder_subtext">专业工程师现场检测您的设备，并采取现场面对面的透明化维修模式，让您的设备不用返厂</view>
+           <view class="crder_view">   <!--判断后台传数据1是默认，2是面议 3是免费 wx-if=""-->
+           <view><text class="crder_viewpicse">￥180</text><text class="crder_viewsubp">￥210</text></view>
+           <view class="crder_msg">面议</view>
+           <view class="crder_mianfei" wx-if="">免费</view>
+           <view class="crder_yuyue">已预约：10</view>
+           </view>
+           </navigator>
+         </view>
+         <!-- 结束服务一 -->
+               <!-- 开始服务一 -->
+         <view class="crderconter">
+          <navigator url="/pages/msgBoard/msgBoard" hover-class="navigator-hover">
+           <view class="crder_img"><image src="../../images/online/dianzi.jpg" mode="scaleToFill"></image></view>
+           <view class="crder_text">手机电子维修，更换屏幕等手机电子维修</view>
+           <view class="crder_subtext">专业工程师现场检测您的设备，并采取现场面对面的透明化维修模式，让您的设备不用返厂</view>
+           <view class="crder_view">   <!--判断后台传数据1是默认，2是面议 3是免费 wx-if=""-->
+           <view><text class="crder_viewpicse">￥180</text><text class="crder_viewsubp">￥210</text></view>
+           <view class="crder_msg">面议</view>
+           <view class="crder_mianfei" wx-if="">免费</view>
+           <view class="crder_yuyue">已预约：10</view>
+           </view>
+           </navigator>
+         </view>
+         <!-- 结束服务一 -->
+    </view>
+     <view class="orderInfo-item" hidden="{{currentTab!=1}}"> 
+             <!-- 开始服务一 -->
+         <view class="crderconter">
+          <navigator url="/pages/msgBoard/msgBoard" hover-class="navigator-hover">
+           <view class="crder_img"><image src="../../images/online/dianzi.jpg" mode="scaleToFill"></image></view>
+           <view class="crder_text">手机电子维修，更换屏幕等手机电子维修</view>
+           <view class="crder_subtext">专业工程师现场检测您的设备，并采取现场面对面的透明化维修模式，让您的设备不用返厂</view>
+           <view class="crder_view">   <!--判断后台传数据1是默认，2是面议 3是免费 wx-if=""-->
+           <view><text class="crder_viewpicse">￥180</text><text class="crder_viewsubp">￥210</text></view>
+           <view class="crder_msg">面议</view>
+           <view class="crder_mianfei" wx-if="">免费</view>
+           <view class="crder_yuyue">已预约：10</view>
+           </view>
+           </navigator>
+         </view>
+         <!-- 结束服务一 -->
+    </view>
+     <view class="orderInfo-item" hidden="{{currentTab!=2}}"> 3333
+    </view>
+     <view class="orderInfo-item" hidden="{{currentTab!=3}}"> 444
+    </view>
+   </view>
+  </view>
+       <!-- 结束提交订单 -->

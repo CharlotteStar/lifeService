@@ -8,7 +8,7 @@
 
   <van-cell-group class="option">
     <text>电话</text>
-    <van-field value="{{ phone }}" bind:change="onPhoneChange" />
+    <van-field value="{{ phone }}" bind:change="onPhoneChange" maxlength="11"/>
   </van-cell-group>
 
   <van-cell-group class="option">

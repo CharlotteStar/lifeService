@@ -5,10 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    "bnrUrl": [{  //轮播图
+    "bnrUrl": [{  //轮播 图
       "url": "../../images/Sdescription/shuoming1.jpg"
     }, {
-      "url": "../../images/index/lunbotu2.jpg"
+        "url": "../../images/Sdescription/shuoming1.jpg"
     }],
     navTab: ['上门维修', '到店维修'],
     currentTab: 0,  //切换tab内容

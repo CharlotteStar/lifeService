@@ -8,13 +8,13 @@ Page({
    */
   data: {
     "bnrUrl": [{
-      "url": "../../images/index/lunbotu1.jpg"
+      "url": "cloud://yuan-p9q0n.7975-yuan-p9q0n/index/lunbotu1.jpg"
     }, {
-        "url": "../../images/index/lunbotu2.jpg"
+        "url": "cloud://yuan-p9q0n.7975-yuan-p9q0n/index/lunbotu2.jpg"
     }],
     currentSwiper: 0,
     autoplay: true,
-    radio: '',  //选中的服务
+    radio: '',  //选  中的服务
     sms:'',    //
     makeimg:''    //保修预约的图片
   },

@@ -1,10 +1,11 @@
 {
   "pages": [
-    "pages/order/order",
-    "pages/home/home",
     "pages/addService/addService",
+    "pages/home/home",
+    
     "pages/me/me",
     "pages/index/index",
+    "pages/order/order",
     "pages/addBusCard/addBusCard",
     "pages/onlineRepairs/onlineRepairs",
     "pages/busCardList/busCardList",

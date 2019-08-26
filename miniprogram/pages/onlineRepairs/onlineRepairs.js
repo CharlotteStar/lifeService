@@ -5,9 +5,25 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    navTab: ['全部', '厨卫维修', '家电维修', '电子产品'],
+    currentTab: 0,  //切换tab内容
+    sendList: [],
   },
-
+  currentTab: function (e) { //点击切换内容
+    if (this.data.currentTab == e.currentTarget.dataset.idx) {
+      return;
+    }
+    this.setData({
+      currentTab: e.currentTarget.dataset.idx
+    })
+    /*this.select = {
+      page: 1,
+      size: 6,
+      isEnd: false
+    }*/
+    this.data.sendList = [];
+    //this.getData()
+  },
   /**
    * 生命周期函数--监听页面加载
    */

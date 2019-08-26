@@ -6,7 +6,7 @@ Page({
    */
   data: {
     "bnrUrl": [{  //轮播图
-      "url": "../../images/index/lunbotu1.jpg"
+      "url": "../../images/online/kongtiao.jpg"
     }, {
       "url": "../../images/index/lunbotu2.jpg"
     }],
